@@ -1,4 +1,4 @@
-import { MenuHorizontal } from './components/menuHorizontal/MenuHorizontal';
+import InitBar from './components/initBar/InitBar';
 
 export const App = () => {
 	return (
@@ -10,8 +10,7 @@ export const App = () => {
 					{ text: 'Usuarios', to: '/options/user', icon: 'user' },
 				]}
 			/> */}
-
-			<MenuHorizontal
+			<InitBar
 				items={[
 					{ text: 'inicio', to: '/options' },
 					{
@@ -21,6 +20,16 @@ export const App = () => {
 					},
 				]}
 			/>
+			{/* <MenuHorizontal
+				items={[
+					{ text: 'inicio', to: '/options' },
+					{
+						text: 'Usuarios',
+						to: '/options/user',
+						sub: [{ text: 'Usuarios', to: '/options/user' }],
+					},
+				]}
+			/> */}
 		</>
 	);
 };

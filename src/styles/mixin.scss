@@ -1,0 +1,8 @@
+@mixin defaultStyles(
+	$border: var(--secondary-color),
+	$background: var(--primary-color)
+) {
+	border: 0.0625em solid $border;
+	border-radius: var(--border-radius);
+	background-color: $background;
+}

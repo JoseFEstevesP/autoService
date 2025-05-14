@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button } from '../button/Button';
-import { Icons } from '../icon/Icons';
-import LinkPer from '../link/LinkPer';
+import { Button } from '../../button/Button';
+import { Icons } from '../../icon/Icons';
+import LinkPer from '../../link/LinkPer';
 import type { MenuItem, VerticalMenuProps } from './interface';
 
 import { NavLink } from 'react-router-dom';
