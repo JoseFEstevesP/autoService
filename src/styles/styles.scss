@@ -1,0 +1,20 @@
+@import url('./reset.scss');
+
+:root {
+	// Colores
+	--primary-color: #1f3a47;
+	--secondary-color: #2ca7e3;
+	--background: #030b14;
+
+	// structure
+	--border-radius: 0.3125em;
+}
+
+#root {
+	width: 100%;
+	min-height: 100dvh;
+}
+
+body {
+	background-color: var(--background);
+}

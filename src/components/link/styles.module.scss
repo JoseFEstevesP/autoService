@@ -1,0 +1,19 @@
+.link {
+	font-size: 1rem;
+	color: var(--color-darker);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.2em;
+
+	&__text {
+		font-size: 1em;
+	}
+
+	&__icon {
+		--size: 1em;
+
+		width: var(--size);
+		height: var(--size);
+	}
+}
