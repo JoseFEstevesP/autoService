@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 const InitBar = ({ items, ...props }: InitBarProps) => {
 	return (
 		<>
-			<aside {...props} className={`${styles.initBar}  `}>
+			<aside {...props} className={`${styles.initBar}  ${props.className}`}>
 				<header>
 					<Icons iconName='logo' className={`${styles.initBar__logo}`} />
 				</header>

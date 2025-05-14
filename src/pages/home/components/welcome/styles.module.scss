@@ -1,0 +1,50 @@
+@use '../../../../styles/mixin' as *;
+.welcome {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 1em;
+
+	&__title {
+		font-size: 3.75em;
+		margin: 0;
+	}
+
+	&__description {
+		font-size: 1.5em;
+		margin: 0;
+	}
+
+	&__socialBar {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+	}
+
+	&__link {
+		--size: 2.5em;
+		transition: color 0.3s ease-in-out;
+		&:hover {
+			color: var(--secondary-color);
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+	}
+
+	&__button {
+		font-size: 1.125em;
+		padding: 0.3125em;
+		@include defaultStyles;
+	}
+
+	&__buttonIcon {
+		--size: 1.3em;
+	}
+}

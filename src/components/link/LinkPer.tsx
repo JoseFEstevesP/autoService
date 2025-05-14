@@ -5,9 +5,14 @@ import styles from './styles.module.scss';
 
 const LinkPer = ({ to, text, icon, ...props }: LinkProp) => {
 	return (
-		<Link {...props} to={to} className={`${styles.link} `}>
+		<Link {...props} to={to} className={`${styles.link} ${props.className}`}>
 			{text && <span className={styles.link__text}>{text}</span>}
-			{icon?.iconName && <Icons {...icon} className={styles.link__icon} />}
+			{props.children && (
+				<span className={styles.link__text}>{props.children}</span>
+			)}
+			{icon?.iconName && (
+				<Icons {...icon} className={`${styles.link__icon} ${icon.className}`} />
+			)}
 		</Link>
 	);
 };
