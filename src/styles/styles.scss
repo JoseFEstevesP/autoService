@@ -6,9 +6,10 @@
 	--secondary-color: #2ca7e3;
 	--background: #030b14;
 	--background-transparent: rgba(74, 74, 74, 0.8);
-
+	--text-gry: #abb0ba;
 	// structure
 	--border-radius: 0.3125em;
+	--clip-path-top: polygon(0 0, 100% 0, 100% 96%, 0 98%);
 }
 
 #root {

@@ -1,9 +1,10 @@
 import InitBar from '../../../../components/initBar/InitBar';
 import Welcome from '../welcome/Welcome';
 import styles from './styles.module.scss';
-const Header = () => {
+
+const Header = ({ className }: { className?: string }) => {
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header} ${className}`}>
 			<InitBar
 				className={styles.header__initBar}
 				items={[

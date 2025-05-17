@@ -1,9 +1,9 @@
-import Header from './pages/home/components/header/Header';
+import Home from './pages/home/Home';
 
 export const App = () => {
 	return (
 		<>
-			<Header />
+			<Home />
 		</>
 	);
 };

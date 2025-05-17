@@ -118,11 +118,12 @@
 	&__link {
 		width: 100%;
 		height: 2.5em;
-
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
 		text-align: center;
+		color: var(--text-gry);
+		transition: color 0.2s ease-in-out;
 
 		&:hover {
 			color: var(--secondary-color);
