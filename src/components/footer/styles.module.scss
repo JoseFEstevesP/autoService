@@ -1,40 +1,56 @@
 .footer {
-	font-size: 1rem;
+	font-size: 0.6rem;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	gap: 1em;
-	padding-top: 1em;
+	padding: 1em;
+
+	@media screen and (min-width: 1024px) {
+		font-size: 1rem;
+	}
 
 	&__container {
 		width: 100%;
 		display: flex;
-		flex-direction: row;
 		justify-content: center;
 		align-items: flex-start;
+		flex-direction: column;
 		gap: 1em;
+
+		@media screen and (min-width: 1024px) {
+			flex-direction: row;
+		}
 	}
 
 	&__section {
-		width: 18.75em;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
+		justify-content: center;
 		align-items: center;
 		gap: 1em;
 	}
 
 	&__sectionTitle {
+		width: 100%;
 		margin: 0;
 		font-size: 1.5em;
-		text-align: start;
+		text-align: center;
+
+		@media screen and (min-width: 1024px) {
+			width: auto;
+			text-align: start;
+		}
 	}
 
 	&__logo {
-		width: 100%;
-		justify-content: flex-start;
+		@media screen and (min-width: 1024px) {
+			width: 100%;
+			justify-content: flex-start;
+		}
 	}
 
 	&__logoIcon {
@@ -50,9 +66,13 @@
 	&__socialIcons {
 		width: 100%;
 		display: flex;
-		justify-content: flex-start;
+		justify-content: center;
 		align-items: center;
 		gap: 1em;
+
+		@media screen and (min-width: 1024px) {
+			justify-content: flex-start;
+		}
 	}
 
 	&__link {
@@ -66,21 +86,30 @@
 	}
 
 	&__linkList {
+		width: 100%;
 		list-style: none;
 		padding: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		align-items: flex-start;
+		align-items: center;
 		gap: 0.5em;
 		margin: 0;
+
+		@media screen and (min-width: 1024px) {
+			width: auto;
+			align-items: flex-start;
+		}
 	}
 
 	&__linkListItem {
-		width: 100%;
+		width: auto;
+
+		@media screen and (min-width: 1024px) {
+			width: 100%;
+		}
 
 		&--contact {
-			width: 100%;
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
@@ -89,6 +118,10 @@
 
 			&:hover {
 				color: var(--secondary-color);
+			}
+
+			@media screen and (min-width: 1024px) {
+				width: 100%;
 			}
 		}
 	}

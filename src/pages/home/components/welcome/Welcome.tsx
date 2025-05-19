@@ -1,5 +1,6 @@
 import LinkPer from '../../../../components/link/LinkPer';
 import styles from './styles.module.scss';
+
 const Welcome = ({ className }: { className?: string }) => {
 	return (
 		<>

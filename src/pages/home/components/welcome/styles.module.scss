@@ -1,10 +1,20 @@
 @use '../../../../styles/mixin' as *;
+
 .welcome {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
 	gap: 1em;
+	font-size: 0.6rem;
+
+	@media screen and (min-width: 1024px) {
+		font-size: 0.8rem;
+	}
+
+	@media screen and (min-width: 1280px) {
+		font-size: 1rem;
+	}
 
 	&__title {
 		font-size: 3.75em;

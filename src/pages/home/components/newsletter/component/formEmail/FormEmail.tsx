@@ -41,7 +41,7 @@ const FormEmail = () => {
 				icon={{
 					iconName: msg.from.btn.icon as NameIcon,
 				}}
-				className={Button.styles['button--default']}
+				className={`${Button.styles['button--default']} ${styles.formEmail__btn}`}
 			/>
 		</form>
 	);
