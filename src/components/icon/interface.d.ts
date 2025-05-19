@@ -18,7 +18,8 @@ export type NameIcon =
 	| 'x'
 	| 'arrow-small'
 	| 'logo'
-	| 'padlock';
+	| 'padlock'
+	| 'add';
 
 export interface IconParameter extends SVGProps<SVGSVGElement> {
 	iconName: NameIcon;
