@@ -1,4 +1,8 @@
+import Footer from '../../components/footer/Footer';
+import Cite from './components/cite/Cite';
 import Header from './components/header/Header';
+import Newsletter from './components/newsletter/Newsletter';
+import Price from './components/price/Price';
 import Product from './components/product/Product';
 import Services from './components/services/Services';
 import styles from './styles.module.scss';
@@ -9,7 +13,11 @@ const Home = () => {
 			<main className={styles.home__main}>
 				<Services />
 				<Product />
+				<Cite />
+				<Price />
+				<Newsletter />
 			</main>
+			<Footer />
 		</main>
 	);
 };
