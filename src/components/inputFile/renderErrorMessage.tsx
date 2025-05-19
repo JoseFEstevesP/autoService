@@ -1,4 +1,4 @@
-export const renderErrorMessage = message => {
+export const renderErrorMessage = (message: string) => {
 	const lines = message?.split('\n');
 	return (
 		<span className='input__error'>

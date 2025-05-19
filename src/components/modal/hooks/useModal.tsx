@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { UseModalProps, UseModalReturn } from '../interface';
+import type { UseModalProps, UseModalReturn } from '../interface';
 
 const useModal = ({ initState = false }: UseModalProps): UseModalReturn => {
 	const [isOpen, setIsOpen] = useState<boolean>(initState);
