@@ -1,5 +1,5 @@
 import CardProduct from '../../../../components/cardProduct/CardProduct';
-import Section from '../section/Section';
+import Section from '../../../../components/section/Section';
 
 const productCar = [
 	{
@@ -95,10 +95,12 @@ const Product = ({ className }: { className?: string }) => {
 	return (
 		<Section
 			className={`${className}`}
-			title='Productos'
-			description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatem.'
-			textLink='Ver más productos'
-			to='/products'
+			title='Nuestros  Productos'
+			description='Ofrecemos una amplia gama de productos para mantener tu vehículo en óptimas condiciones.'
+			link={{
+				to: '/products',
+				textLink: 'Ver más productos',
+			}}
 		>
 			{productCar.map((product, index) => (
 				<CardProduct

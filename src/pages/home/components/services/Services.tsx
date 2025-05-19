@@ -1,5 +1,5 @@
 import CardServices from '../../../../components/cardServices/CardServices';
-import Section from '../section/Section';
+import Section from '../../../../components/section/Section';
 const services = [
 	{
 		title: 'Mantenimiento Preventivo',
@@ -84,10 +84,12 @@ const Services = ({ className }: { className?: string }) => {
 	return (
 		<Section
 			className={`${className}`}
-			title='Servicios'
-			description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatem.'
-			textLink='Ver más servicios'
-			to='/services'
+			title='Nuestros Servicios'
+			description='Ofrecemos una amplia gama de servicios para mantener tu vehículo en óptimas condiciones.'
+			link={{
+				to: '/services',
+				textLink: 'Ver más servicios',
+			}}
 		>
 			{services.map((service, index) => (
 				<CardServices
