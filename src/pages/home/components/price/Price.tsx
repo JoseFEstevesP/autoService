@@ -1,4 +1,4 @@
-import CardPrice from '../cardPrice/CardPrice';
+import CardDecorative from '../../../../components/cardDecorative/CardDecorative';
 import { methodsPayment } from './data';
 import styles from './styles.module.scss';
 
@@ -11,7 +11,7 @@ const Price = () => {
 			</p>
 			<div className={styles.price__cards}>
 				{methodsPayment.map((method, index) => (
-					<CardPrice
+					<CardDecorative
 						key={index}
 						title={method.title}
 						description={method.description}

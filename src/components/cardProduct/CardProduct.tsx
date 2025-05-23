@@ -32,7 +32,7 @@ const CardProduct = ({
 						onClick={handleClick?.buy}
 					/>
 					<Button
-						icon={{ iconName: 'car' }}
+						icon={{ iconName: 'shopCar' }}
 						aria-label='Añadir al carrito'
 						className={`${Button.styles['button--default']} ${styles.cardProduct__button}`}
 						onClick={handleClick?.addToCart}

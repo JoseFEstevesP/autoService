@@ -1,0 +1,228 @@
+@use '../../styles/mixin.scss' as *;
+
+.aboutHeader {
+	width: 100%;
+	height: 100dvh;
+	font-size: 1rem;
+	padding: 1em 1em 2em 1em;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+	grid-template-areas:
+		'initBar'
+		'contentText';
+	align-items: flex-end;
+	background-image:
+		linear-gradient(0deg, var(--background-transparent)),
+		url('/img/aboutpage.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	clip-path: var(--clip-path-top);
+
+	@media screen and (min-width: 768px) {
+		grid-template-columns: 1fr 30em;
+		grid-template-areas:
+			'initBar initBar'
+			'contentText contentText';
+	}
+
+	&__initBar {
+		grid-area: initBar;
+	}
+
+	&__contentText {
+		grid-area: contentText;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__title {
+		font-size: 3.75em;
+		margin: 0;
+		text-align: center;
+	}
+
+	&__description {
+		font-size: 1.5em;
+		margin: 0;
+		text-align: center;
+	}
+}
+
+.about {
+	width: 100%;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+
+	&__us {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, auto);
+		grid-template-areas:
+			'title'
+			'text'
+			'cards';
+		gap: 1em;
+		justify-items: center;
+		align-items: center;
+		padding: 0 1em;
+
+		@media screen and (min-width: 1024px) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: repeat(2, auto);
+			grid-template-areas:
+				'title title'
+				'text cards';
+		}
+	}
+
+	&__usTitle {
+		grid-area: title;
+		font-size: 2em;
+		margin: 0;
+		text-align: center;
+	}
+
+	&__usText {
+		grid-area: text;
+		font-size: 1.25em;
+		margin: 0;
+	}
+
+	&__usCards {
+		grid-area: cards;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		flex-wrap: wrap;
+	}
+
+	&__usCardsItem {
+		width: 18.75em;
+	}
+
+	&__missionAndVision {
+		width: 100%;
+		padding: 4.5em 1em;
+		background-image:
+			linear-gradient(0deg, var(--background-transparent)),
+			url('/img/missionAndVision.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		clip-path: var(--clip-path-top-and-bottom);
+	}
+
+	&__mission {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	&__missionTitle {
+		font-size: 2em;
+		margin: 0;
+		text-align: center;
+	}
+
+	&__missionText {
+		font-size: 1.25em;
+		margin: 0;
+	}
+
+	&__vision {
+		width: 100%;
+	}
+
+	&__visionTitle {
+		font-size: 2em;
+		margin: 0;
+		text-align: center;
+	}
+
+	&__visionText {
+		font-size: 1.25em;
+		margin: 0;
+	}
+
+	&__values {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 0 1em;
+		gap: 1em;
+	}
+
+	&__valuesTitle {
+		font-size: 2em;
+		margin: 0;
+		text-align: center;
+	}
+
+	&__valuesCards {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		flex-wrap: wrap;
+	}
+
+	&__valuesCardsItem {
+		width: 18.75em;
+	}
+
+	&__contact {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 2em 1em;
+		gap: 1em;
+		background-image:
+			linear-gradient(0deg, var(--background-transparent)),
+			url('/img/contact.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		clip-path: var(--clip-path-top-and-bottom);
+	}
+
+	&__contactTitle {
+		font-size: 2em;
+		margin: 0;
+		text-align: center;
+	}
+
+	&__contactText {
+		font-size: 1.25em;
+		margin: 0;
+	}
+
+	&__contactList {
+		list-style: none;
+		margin: 0;
+	}
+
+	&__contactListItemLink {
+		justify-content: space-between;
+		transition: color 0.3s ease-in-out;
+
+		&:hover {
+			color: var(--secondary-color);
+		}
+	}
+}

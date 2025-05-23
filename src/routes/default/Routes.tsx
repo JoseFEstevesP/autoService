@@ -1,17 +1,39 @@
 import { Route, Routes } from 'react-router-dom';
-import LayoutD from '../../layout/LayoutD';
+import LayoutD from '../../layout/layoutD/LayoutD';
+import LayoutOfMenu from '../../layout/layoutOfMenu/LayoutOfMenu';
+import About from '../../pages/about/About';
 import Services from '../../pages/home/components/services/Services';
 import ServiceDetail from '../../pages/services/ServiceDetail';
 
 export const RoutesD = () => {
 	return (
-		<LayoutD>
-			<Routes>
-				<Route path='/services'>
-					<Route index element={<Services />} />
-					<Route path='detail/:id' element={<ServiceDetail />} />
-				</Route>
-			</Routes>
-		</LayoutD>
+		<Routes>
+			<Route path='/services'>
+				<Route
+					index
+					element={
+						<LayoutD title='Servicios'>
+							<Services />
+						</LayoutD>
+					}
+				/>
+				<Route
+					path='detail/:id'
+					element={
+						<LayoutD title='Detalle del servicio'>
+							<ServiceDetail />
+						</LayoutD>
+					}
+				/>
+			</Route>
+			<Route
+				path='/about'
+				element={
+					<LayoutOfMenu title='Acerca de'>
+						<About />
+					</LayoutOfMenu>
+				}
+			/>
+		</Routes>
 	);
 };

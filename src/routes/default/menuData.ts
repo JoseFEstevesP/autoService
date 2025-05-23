@@ -5,7 +5,7 @@ export const menuData = [
 	},
 	{
 		text: 'Acerca de nosotros',
-		to: '/about',
+		to: '/default/about',
 	},
 	{
 		text: 'Catalogo',
