@@ -1,5 +1,5 @@
 import LinkPer from '../link/LinkPer';
-import type { SectionProps } from './interface';
+import type { SectionProps } from './types';
 import styles from './styles.module.scss';
 
 const Section = ({ children, description, link, ...props }: SectionProps) => {

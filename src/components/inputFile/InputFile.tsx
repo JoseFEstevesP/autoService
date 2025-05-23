@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Icons } from '../icon/Icons';
-import type { InputProps } from '../input/interface';
+import type { InputProps } from '../input/types';
 import { renderErrorMessage } from './renderErrorMessage';
 import styles from './styles.module.scss';
 

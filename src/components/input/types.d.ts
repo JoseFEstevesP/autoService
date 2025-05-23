@@ -1,5 +1,5 @@
 import type { UseFormRegister } from 'react-hook-form';
-import type { NameIcon } from '../icon/interface';
+import type { NameIcon } from '../icon/types';
 
 export type ErrorInput = ErrorStructure | undefined;
 

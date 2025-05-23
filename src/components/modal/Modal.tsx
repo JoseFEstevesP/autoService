@@ -1,6 +1,6 @@
 import { Button } from '../button/Button';
-import type { ModalProps } from './interface';
 import style from './styles.module.scss';
+import type { ModalProps } from './types';
 
 const Modal = ({
 	className = '',

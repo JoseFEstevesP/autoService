@@ -1,7 +1,7 @@
 import { Icons } from '../icon/Icons';
 import { MenuHorizontal } from '../menu/menuHorizontal/MenuHorizontal';
-import type { InitBarProps } from './interface';
 import styles from './styles.module.scss';
+import type { InitBarProps } from './types';
 
 const InitBar = ({ items, ...props }: InitBarProps) => {
 	return (

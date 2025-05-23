@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react';
 import type { LinkProps } from 'react-router-dom';
-import type { IconParameter } from '../icon/interface';
+import type { IconParameter } from '../icon/types';
 
 export interface LinkProp
 	extends HTMLAttributes<LinkProps & HTMLAnchorElement> {

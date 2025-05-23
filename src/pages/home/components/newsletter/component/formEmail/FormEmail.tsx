@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { Button } from '../../../../../../components/button/Button';
-import type { NameIcon } from '../../../../../../components/icon/interface';
+import type { NameIcon } from '../../../../../../components/icon/types';
 import useRenderInputs from '../../../../../../hooks/useRenderInputs/useRenderInputs';
 import {
 	NewsletterEmailSchema,

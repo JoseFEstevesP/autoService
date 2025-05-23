@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../../button/Button';
-import type { HorizontalMenuProps, MenuItem } from './interface';
+import type { HorizontalMenuProps, MenuItem } from './types';
 
 import { Link, NavLink } from 'react-router-dom';
 import styles from './styles.module.scss';

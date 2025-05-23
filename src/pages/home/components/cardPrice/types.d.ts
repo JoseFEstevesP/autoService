@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react';
-import type { NameIcon } from '../../../../components/icon/interface';
+import type { NameIcon } from '../../../../components/icon/types';
 
 export interface CardPriceProps extends HTMLAttributes<HTMLElement> {
 	description: string;

@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
-import type { IconParameter } from '../icon/interface';
+import type { IconParameter } from '../icon/types';
 
 export interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	icon?: IconParameter;

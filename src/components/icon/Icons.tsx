@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import type { IconParameter } from './interface';
 import styles from './styles.module.scss';
+import type { IconParameter } from './types';
 
 const iconPack = {
 	autoServiceIcon: import('./../../assets/icon/autoService-min.svg'),

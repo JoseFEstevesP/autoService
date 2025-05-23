@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Icons } from '../icon/Icons';
-import type { LinkProp } from './interface';
 import styles from './styles.module.scss';
+import type { LinkProp } from './types';
 
 const LinkPer = ({ to, text, icon, ...props }: LinkProp) => {
 	return (

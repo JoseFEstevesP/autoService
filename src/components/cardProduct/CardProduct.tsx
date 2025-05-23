@@ -1,6 +1,6 @@
 import { Button } from '../button/Button';
-import type { CardProductProps } from './interface';
 import styles from './styles.module.scss';
+import type { CardProductProps } from './types';
 
 const CardProduct = ({
 	image,

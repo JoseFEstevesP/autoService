@@ -1,7 +1,7 @@
 import { Icons } from '../icon/Icons';
 import LinkPer from '../link/LinkPer';
-import type { FooterProps } from './interface';
 import styles from './styles.module.scss';
+import type { FooterProps } from './types';
 
 const Footer = ({ ...props }: FooterProps) => {
 	return (

@@ -1,7 +1,7 @@
 import { Icons } from '../icon/Icons';
-import type { InputProps } from './interface';
 import { renderErrorMessage } from './renderErrorMessage';
 import styles from './styles.module.scss';
+import type { InputProps } from './types';
 
 export const Input = ({
 	name,

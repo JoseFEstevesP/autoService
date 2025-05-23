@@ -1,7 +1,7 @@
 import type { FieldValues } from 'react-hook-form';
 import { Input } from '../../components/input/Input';
-import type { ErrorInput } from '../../components/input/interface';
-import type { RenderInputType, UseRenderInputsType } from './interface';
+import type { ErrorInput } from '../../components/input/types';
+import type { RenderInputType, UseRenderInputsType } from './types';
 
 const useRenderInputs = <T extends FieldValues>({
 	register,

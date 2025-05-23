@@ -1,6 +1,6 @@
 import { Icons } from '../../../../components/icon/Icons';
-import type { CardPriceProps } from './interface';
 import styles from './styles.module.scss';
+import type { CardPriceProps } from './types';
 
 const CardPrice = ({ description, iconName, ...props }: CardPriceProps) => {
 	return (

@@ -1,7 +1,7 @@
 import type { Control, FieldErrors, UseFormRegister } from 'react-hook-form';
-import type { NameIcon } from '../../components/icon/interface';
-import type { TypeInput } from '../../components/input/interface';
-import type { ValueAll } from '../../interface';
+import type { NameIcon } from '../../components/icon/types';
+import type { TypeInput } from '../../components/input/types';
+import type { ValueAll } from '../../types';
 
 export interface UseRenderInputsType<T> {
 	register?: UseFormRegister<T>;

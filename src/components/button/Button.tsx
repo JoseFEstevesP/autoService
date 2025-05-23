@@ -1,5 +1,5 @@
 import { Icons } from '../icon/Icons';
-import type { BtnProps } from './interface';
+import type { BtnProps } from './types';
 import styles from './styles.module.scss';
 
 export const Button = ({ icon, title, text, children, ...props }: BtnProps) => {

@@ -1,6 +1,6 @@
 import LinkPer from '../link/LinkPer';
-import type { CardServicesProps } from './interface';
 import styles from './styles.module.scss';
+import type { CardServicesProps } from './types';
 
 const CardServices = ({
 	image,
