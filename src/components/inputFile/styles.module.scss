@@ -141,7 +141,9 @@
 		filter: drop-shadow(0 0 0.625em rgba(0, 0, 0, 0.1));
 		opacity: 0;
 		visibility: hidden;
-		transition: opacity 0.3s ease, visibility 0.3s ease;
+		transition:
+			opacity 0.3s ease,
+			visibility 0.3s ease;
 
 		&::before {
 			// Box Model

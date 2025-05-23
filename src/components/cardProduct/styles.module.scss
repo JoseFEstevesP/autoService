@@ -12,7 +12,9 @@
 	border: 0.0625em solid var(--secondary-color);
 	background-color: var(--primary-color);
 	overflow: hidden;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 
 	&:hover {
 		transform: translateY(-0.3125em);

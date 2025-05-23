@@ -17,7 +17,7 @@ const useGet = <TResponse, TParams extends ParamsDataGet = ParamsDataGet>() => {
 	const useGetQuery = (
 		key: string,
 		{ url, params }: { url: string; params?: TParams },
-		options = {}
+		options = {},
 	) => {
 		return useQuery<TResponse, Error>({
 			queryKey: [key, params],
