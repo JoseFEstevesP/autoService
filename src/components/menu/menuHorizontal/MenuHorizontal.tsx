@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '../../button/Button';
 import type { HorizontalMenuProps, MenuItem } from './interface';
 
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './styles.module.scss';
 
 export const MenuHorizontal = ({ items, ...props }: HorizontalMenuProps) => {
@@ -82,20 +82,47 @@ const ItemNav = ({
 	item: MenuItem;
 	className?: string;
 }) => {
-	return (
-		item.to && (
-			<NavLink
-				title={item.text}
-				to={item.to}
-				className={({ isActive }) =>
-					`${styles.menu__link} ${className} ${
-						isActive ? styles['menu__link--routeActive'] : ''
-					}`
-				}
-				end
+	if (!item.to) return null;
+
+	if (item.to.includes('#')) {
+		const [path, hash] = item.to.split('#');
+		const currentPath = window.location.pathname;
+		const basePath = path || '/';
+
+		return (
+			<Link
+				to={{
+					pathname: basePath,
+					hash: hash,
+				}}
+				className={`${styles.menu__link} ${className}`}
+				onClick={e => {
+					if (currentPath === basePath) {
+						e.preventDefault();
+						const element = document.getElementById(hash);
+						if (element) {
+							element.scrollIntoView({ behavior: 'smooth' });
+						}
+					}
+				}}
 			>
 				<b>{item.text}</b>
-			</NavLink>
-		)
+			</Link>
+		);
+	}
+
+	return (
+		<NavLink
+			title={item.text}
+			to={item.to}
+			className={({ isActive }) =>
+				`${styles.menu__link} ${className} ${
+					isActive ? styles['menu__link--routeActive'] : ''
+				}`
+			}
+			end
+		>
+			<b>{item.text}</b>
+		</NavLink>
 	);
 };

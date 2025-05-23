@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 const Price = () => {
 	return (
-		<section className={styles.price}>
+		<section className={styles.price} id='price'>
 			<h2 className={styles.price__title}>Métodos de pagos</h2>
 			<p className={styles.price__description}>
 				Diversas opciones de pago para que tu compra sea fácil y segura.

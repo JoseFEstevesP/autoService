@@ -1,0 +1,72 @@
+@use '../../styles/mixin' as *;
+
+.serviceDetail {
+	font-size: 1rem;
+	width: max(18.75em, 50%);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include defaultStyles($background: transparent);
+	overflow: hidden;
+
+	@media screen and (min-width: 1024px) {
+		flex-direction: row;
+	}
+
+	&__contentImage {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		clip-path: var(--clip-path-top);
+
+		@media screen and (min-width: 1024px) {
+			height: 20em;
+			clip-path: none;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: linear-gradient(0deg, var(--background-transparent));
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__contentData {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 1em;
+		gap: 1em;
+	}
+
+	&__title {
+		font-size: 1.25em;
+		margin: 0;
+		text-align: center;
+	}
+
+	&__description {
+		font-size: 0.875em;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+		padding: 1em;
+	}
+
+	&__link {
+		font-size: 1.125em;
+		padding: 0.3125em;
+		@include defaultStyles;
+	}
+}

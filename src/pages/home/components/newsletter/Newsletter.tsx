@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 
 const Newsletter = () => {
 	return (
-		<section className={styles.newsletter}>
+		<section className={styles.newsletter} id='newsletter'>
 			<h2 className={styles.newsletter__title}>Suscríbete a Nuestro Boletín</h2>
 			<p className={styles.newsletter__description}>
 				Recibe las últimas novedades, ofertas exclusivas y contenido especial
