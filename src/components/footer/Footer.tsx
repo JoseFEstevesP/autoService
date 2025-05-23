@@ -125,19 +125,19 @@ const Footer = ({ ...props }: FooterProps) => {
 								iconName='location'
 								className={styles.footer__contactIcon}
 							/>
-							Ubicación
+							Calle Falsa 123, Santiago, Chile
 						</li>
 						<li
 							className={`${styles.footer__linkListItem} ${styles['footer__linkListItem--contact']}`}
 						>
 							<Icons iconName='phone' className={styles.footer__contactIcon} />
-							Teléfono
+							+56 2 222 222 222
 						</li>
 						<li
 							className={`${styles.footer__linkListItem} ${styles['footer__linkListItem--contact']}`}
 						>
 							<Icons iconName='email' className={styles.footer__contactIcon} />
-							Correo
+							auto@service.com
 						</li>
 					</ul>
 				</div>
