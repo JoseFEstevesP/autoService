@@ -1,3 +1,4 @@
+import ButtonTheme from '../buttonTheme/ButtonTheme';
 import { Icons } from '../icon/Icons';
 import { MenuHorizontal } from '../menu/menuHorizontal/MenuHorizontal';
 import styles from './styles.module.scss';
@@ -15,6 +16,7 @@ const InitBar = ({ items, ...props }: InitBarProps) => {
 				</main>
 				<footer className={styles.initBar__footer}>
 					<Icons iconName='user' className={styles.initBar__icon} />
+					<ButtonTheme />
 				</footer>
 			</aside>
 		</>

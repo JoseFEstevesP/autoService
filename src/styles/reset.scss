@@ -1,8 +1,6 @@
 :root {
-	--color-primary: #f0f0f0;
-	--color-secondary: #181818;
-	// --color-primary: #181818;
-	// --color-secondary:  #f0f0f0;
+	--color-primary: #181818;
+	--color-secondary: #f0f0f0;
 	--font-principal:
 		system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 	--text-ratio: 1.2;
@@ -10,18 +8,27 @@
 	--flow-space: 1em;
 	--border-radius: 0.25rem;
 }
-// @media (prefers-color-scheme: dark) {
-// 	:root {
-// 		--color-primary: #f0f0f0;
-// 		--color-secondary: #181818;
-// 	}
-// }
-// @media (prefers-contrast: high) {
-// 	:root {
-// 		--color-primary: #000;
-// 		--color-secondary: #fff;
-// 	}
-// }
+html[data-theme='dark'] {
+	--color-primary: #f0f0f0;
+	--color-secondary: #181818;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-primary: #f0f0f0;
+		--color-secondary: #181818;
+	}
+	html[data-theme='light'] {
+		--color-primary: #181818;
+		--color-secondary: #f0f0f0;
+	}
+}
+
+@media (prefers-contrast: high) {
+	:root {
+		--color-primary: #000;
+		--color-secondary: #fff;
+	}
+}
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::after,
@@ -51,6 +58,9 @@ html {
 	text-size-adjust: 100%;
 	font-size: 100%;
 	line-height: 1.5;
+	transition:
+		color 0.4s ease-out,
+		background-color 0.4s ease-out;
 }
 @media (prefers-reduced-motion: reduce) {
 	html {
