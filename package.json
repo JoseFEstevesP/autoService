@@ -9,8 +9,7 @@
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"format": "prettier --write .",
-		"prepare": "husky install",
-		"auto-commit": "node auto-commit.js"
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "5.0.1",
