@@ -2,17 +2,13 @@
 
 .serviceDetail {
 	font-size: 1rem;
-	width: max(18.75em, 50%);
+	width: max(18.75em, 70%);
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	@include defaultStyles($background: transparent);
 	overflow: hidden;
-
-	@media screen and (min-width: 1024px) {
-		flex-direction: row;
-	}
 
 	&__contentImage {
 		width: 100%;
@@ -21,8 +17,7 @@
 		clip-path: var(--clip-path-top);
 
 		@media screen and (min-width: 1024px) {
-			height: 20em;
-			clip-path: none;
+			height: 12.5em;
 		}
 
 		&::after {
@@ -60,7 +55,9 @@
 		font-size: 0.875em;
 		width: 100%;
 		margin: 0;
-		text-align: center;
+		white-space: pre-line;
+		text-overflow: ellipsis;
+		overflow: hidden;
 		padding: 1em;
 	}
 
@@ -68,5 +65,38 @@
 		font-size: 1.125em;
 		padding: 0.3125em;
 		@include defaultStyles;
+	}
+
+	&__meta {
+		display: flex;
+		gap: 1em;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1em;
+		font-size: 0.9em;
+	}
+
+	&__price {
+		font-weight: bold;
+		color: var(--secondary-color);
+	}
+
+	&__rating {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25em;
+	}
+
+	&__iconStar {
+		--size: 1.2em;
+		color: var(--star-color);
+	}
+
+	&__category {
+		background-color: var(--background-secondary);
+		padding: 0.2em 0.5em;
+		border-radius: 0.3em;
 	}
 }

@@ -7,6 +7,8 @@
 	--background-transparent: rgba(255, 255, 255, 0.6);
 	--text-gry: #424242;
 	--accent-color: #ff5252;
+	--star-color: #eeff00;
+	--error-color: #f44336;
 
 	// structure
 	--border-radius: 0.3125em;
@@ -21,6 +23,8 @@ html[data-theme='dark'] {
 	--background-transparent: rgba(74, 74, 74, 0.6);
 	--text-gry: #abb0ba;
 	--accent-color: #f44336;
+	--star-color: #d3e200;
+	--error-color: #f44336;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,6 +35,8 @@ html[data-theme='dark'] {
 		--background-transparent: rgba(74, 74, 74, 0.6);
 		--text-gry: #abb0ba;
 		--accent-color: #f44336;
+		--star-color: #d3e200;
+		--error-color: #f44336;
 	}
 
 	html[data-theme='light'] {
@@ -40,6 +46,8 @@ html[data-theme='dark'] {
 		--background-transparent: rgba(255, 255, 255, 0.6);
 		--text-gry: #424242;
 		--accent-color: #ff5252;
+		--star-color: #eeff00;
+		--error-color: #f44336;
 	}
 }
 
@@ -51,3 +59,27 @@ html[data-theme='dark'] {
 body {
 	background-color: var(--background);
 }
+
+// :root {
+//   /* Light Theme (default) */
+//   --primary-light: #797979;
+//   --primary-container-light: #5C5C5C;
+//   --secondary-light: #223641;
+//   --secondary-container-light: #1A2A33;
+//   --tertiary-light: #EF3D21;
+//   --tertiary-container-light: #C7321A;
+//   --appbar-light: #223641;
+//   --error-light: #B00020;
+//   --error-container-light: #FFDAD4;
+
+//   /* Dark Theme */
+//   --primary-dark: #4A6572;
+//   --primary-container-dark: #344955;
+//   --secondary-dark: #A0A0A0;
+//   --secondary-container-dark: #7A7A7A;
+//   --tertiary-dark: #FF6E40;
+//   --tertiary-container-dark: #CC5833;
+//   --appbar-dark: #4A6572;
+//   --error-dark: #CF6679;
+//   --error-container-dark: #8C1D1D;
+// }

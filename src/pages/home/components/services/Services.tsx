@@ -1,8 +1,18 @@
 import CardServices from '../../../../components/cardServices/CardServices';
+import Loader from '../../../../components/loader/Loader';
 import Section from '../../../../components/section/Section';
-import { servicesData } from '../../../services/servicesData';
+import useGetServices from './hooks/useGetServices';
+import styles from './styles.module.scss';
 
 const Services = ({ className }: { className?: string }) => {
+	const { data, error, isLoading } = useGetServices();
+
+	if (isLoading) return <Loader className={styles.services__loader} />;
+	// if (error)
+	// 	return <Loader className={styles.services__loader} error={!!error} />;
+	if (error) return <div>Error al cargar servicios</div>;
+	if (!data?.length) return <div>No se encontraron servicios</div>;
+
 	return (
 		<Section
 			className={`${className}`}
@@ -13,16 +23,17 @@ const Services = ({ className }: { className?: string }) => {
 				textLink: 'Ver más servicios',
 			}}
 		>
-			{servicesData.map((service, index) => (
+			{data.map(service => (
 				<CardServices
-					key={index}
+					key={service.id}
 					image={service.image}
-					to={'default/services/detail/' + service.uid}
-					title={service.title}
+					to={`default/services/detail/${encodeURIComponent(JSON.stringify(service))}`}
+					title={service.name}
 					description={service.description}
 				/>
 			))}
 		</Section>
 	);
 };
+
 export default Services;

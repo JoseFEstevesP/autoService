@@ -18,7 +18,7 @@ export const RoutesD = () => {
 					}
 				/>
 				<Route
-					path='detail/:id'
+					path='detail/:data'
 					element={
 						<LayoutD title='Detalle del servicio'>
 							<ServiceDetail />
