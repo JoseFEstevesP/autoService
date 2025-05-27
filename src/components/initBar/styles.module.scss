@@ -10,7 +10,8 @@
 	transition: transform 0.5s ease;
 
 	&__logo {
-		--size: 4.5em;
+		--size: 4em;
+		width: 9em;
 	}
 
 	&__contentMenu {
