@@ -3,6 +3,6 @@ export interface ValueAll {
 	label: string;
 }
 
-export interface ParamsDataGet extends ParamsData {
+export interface ParamsDataGet {
 	[key: string]: string | number | boolean | undefined | FileList;
 }
