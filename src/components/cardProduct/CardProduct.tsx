@@ -30,7 +30,7 @@ const CardProduct = ({
 				<h2 className={styles.cardProduct__title}>{title}</h2>
 				<div className={styles.cardProduct__model}>{model}</div>
 
-				<Stars rating={rating} className={styles.cardProduct__rating} />
+				<Stars rating={rating || 0} className={styles.cardProduct__rating} />
 
 				<div className={styles.cardProduct__pricing}>
 					<p className={styles.cardProduct__price}>${price}</p>
