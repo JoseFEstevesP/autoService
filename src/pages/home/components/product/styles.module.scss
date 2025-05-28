@@ -1,0 +1,14 @@
+.product {
+	&__loader {
+		font-size: 0.625em;
+		transition: all 0.3s ease-in-out;
+
+		&--error {
+			font-size: 0.3125em;
+		}
+
+		&--warning {
+			font-size: 0.3125em;
+		}
+	}
+}
