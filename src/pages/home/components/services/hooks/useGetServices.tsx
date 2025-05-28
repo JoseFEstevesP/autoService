@@ -30,13 +30,13 @@ const useGetServices = () => {
 	}, [error, setMsg]);
 
 	useEffect(() => {
-		if (!isLoading && !data?.data) {
+		if (!isLoading && !data?.data && !error) {
 			setMsg({
 				type: 'warning',
 				msg: `No hay servicios disponibles`,
 			});
 		}
-	}, [data, isLoading, setMsg]);
+	}, [data, error, isLoading, setMsg]);
 
 	return { data: data?.data, error, isLoading };
 };
