@@ -8,10 +8,20 @@ const Services = ({ className }: { className?: string }) => {
 	const { data, error, isLoading } = useGetServices();
 
 	if (isLoading) return <Loader className={styles.services__loader} />;
-	// if (error)
-	// 	return <Loader className={styles.services__loader} error={!!error} />;
-	if (error) return <div>Error al cargar servicios</div>;
-	if (!data?.length) return <div>No se encontraron servicios</div>;
+	if (error)
+		return (
+			<Loader
+				className={`${styles.services__loader} ${styles['services__loader--error']}`}
+				error
+			/>
+		);
+	if (!data?.length)
+		return (
+			<Loader
+				className={`${styles.services__loader} ${styles['services__loader--warning']}`}
+				warning
+			/>
+		);
 
 	return (
 		<Section

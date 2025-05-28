@@ -8,10 +8,6 @@ const CardServices = ({
 	description,
 	...props
 }: CardServicesProps) => {
-	console.log(
-		" image || '/img/defaultServices.png':",
-		image || '/img/defaultServices.png',
-	);
 	return (
 		<section {...props} className={styles.cardServices}>
 			<div className={styles.cardServices__contentImage}>

@@ -1,4 +1,5 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { router } from '../../../../../constants/router';
 import { ContextMsg } from '../../../../../context/msg/MsgContext';
 import useGet from '../../../../../hooks/useGet/useGet';
 import type { ApiResponse } from '../../../../services/types';
@@ -10,7 +11,7 @@ const useGetServices = () => {
 	const name = 'services';
 
 	const { data, isLoading, error } = useGetQuery(name, {
-		url: '/products',
+		url: router.GET_SERVICE,
 		params: {
 			populate: '*',
 			'pagination[page]': page,
@@ -18,12 +19,25 @@ const useGetServices = () => {
 			'filters[catalog][$eq]': 'servicio',
 		},
 	});
-	if (error) {
-		setMsg({
-			msg: 'Error al cargar los servicios',
-			type: 'error',
-		});
-	}
-	return { data: data?.data, isLoading, error };
+
+	useEffect(() => {
+		if (error) {
+			setMsg({
+				type: 'error',
+				msg: `Error al cargar los servicios`,
+			});
+		}
+	}, [error, setMsg]);
+
+	useEffect(() => {
+		if (!data?.data?.length) {
+			setMsg({
+				type: 'warning',
+				msg: `No hay servicios disponibles`,
+			});
+		}
+	}, [data, setMsg]);
+
+	return { data: data?.data, error, isLoading };
 };
 export default useGetServices;

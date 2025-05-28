@@ -4,13 +4,17 @@ import style from './styles.module.scss';
 
 const Loader = ({
 	error,
+	warning,
 	...props
-}: { error?: boolean } & HTMLProps<HTMLDivElement>) => {
+}: { error?: boolean; warning?: boolean } & HTMLProps<HTMLDivElement>) => {
 	return (
 		<div className={`${style.loader} ${props.className}`}>
-			<Icons iconName='logo' className={style.loader__icon} />
+			<Icons
+				iconName='logo'
+				className={`${style.loader__icon} ${error ? style['loader__icon--error'] : ''} ${warning ? style['loader__icon--warning'] : ''}`}
+			/>
 			<div
-				className={`${style.loader__sniper} ${error ? style['loader__sniper--error'] : ''}`}
+				className={`${style.loader__sniper} ${error ? style['loader__sniper--error'] : ''} ${warning ? style['loader__sniper--warning'] : ''}`}
 			/>
 		</div>
 	);

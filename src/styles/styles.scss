@@ -9,6 +9,7 @@
 	--accent-color: #ff5252;
 	--star-color: #eeff00;
 	--error-color: #f44336;
+	--warning-color: #eeff00;
 
 	// structure
 	--border-radius: 0.3125em;
@@ -25,6 +26,7 @@ html[data-theme='dark'] {
 	--accent-color: #f44336;
 	--star-color: #d3e200;
 	--error-color: #f44336;
+	--warning-color: #d3e200;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +39,7 @@ html[data-theme='dark'] {
 		--accent-color: #f44336;
 		--star-color: #d3e200;
 		--error-color: #f44336;
+		--warning-color: #d3e200;
 	}
 
 	html[data-theme='light'] {
@@ -48,6 +51,7 @@ html[data-theme='dark'] {
 		--accent-color: #ff5252;
 		--star-color: #eeff00;
 		--error-color: #f44336;
+		--warning-color: #eeff00;
 	}
 }
 

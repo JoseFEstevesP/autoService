@@ -1,11 +1,12 @@
 import { useCallback, useContext, useEffect } from 'react';
 import { ContextMsg } from '../../context/msg/MsgContext';
-import style from './styles.module.scss';
 import { Button } from '../button/Button';
+import style from './styles.module.scss';
 
 const classType = {
 	default: style['msg--default'],
 	error: style['msg--error'],
+	warning: style['msg--warning'],
 };
 
 const Msg = () => {

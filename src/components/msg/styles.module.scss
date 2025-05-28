@@ -1,3 +1,4 @@
+@use './../../styles/mixin.scss' as *;
 .msg {
 	display: none;
 	position: fixed;
@@ -5,9 +6,8 @@
 	bottom: 1.25em;
 	left: 50%;
 	transform: translateX(-50%);
+	@include defaultStyles;
 	padding: 0.625em 1.25em;
-	border-radius: var(--border-radius);
-	background-color: var(--secondary-color);
 	z-index: 1000;
 	transition: opacity 0.3s ease-in-out;
 
@@ -17,11 +17,15 @@
 	}
 
 	&--default {
-		box-shadow: 0 0 0 0.125em var(--color);
+		@include defaultStyles;
 	}
 
 	&--error {
-		box-shadow: 0 0 0 0.125em var(--color);
+		border: 0.0625em solid var(--error-color);
+	}
+
+	&--warning {
+		border: 0.0625em solid var(--warning-color);
 	}
 
 	&__content {
@@ -36,9 +40,8 @@
 		position: absolute;
 		top: -0.8125em;
 		right: -0.8125em;
-		background-color: var(--secondary-color);
 		padding: 0.3125em;
-		border-radius: 50%;
+		@include defaultStyles;
 	}
 
 	&__icon {

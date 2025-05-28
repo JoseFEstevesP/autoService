@@ -5,7 +5,7 @@ export interface MsgParameter {
 }
 
 export interface MsgState {
-	type: 'default' | 'error';
+	type: 'default' | 'error' | 'warning';
 	msg: string;
 }
 
