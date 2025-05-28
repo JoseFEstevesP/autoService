@@ -39,7 +39,10 @@ const Services = ({ className }: { className?: string }) => {
 					image={service.image}
 					to={`default/services/detail/${encodeURIComponent(JSON.stringify(service))}`}
 					title={service.name}
-					description={service.description}
+					price={service.price}
+					oldPrice={service.taxable}
+					rating={service.rating}
+					tags={service.tags}
 				/>
 			))}
 		</Section>

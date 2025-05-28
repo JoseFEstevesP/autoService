@@ -16,8 +16,17 @@ export interface ServiceType {
 	model: string;
 	category: string;
 	image: string;
-	tags: string[];
+	tags: Tag[];
 	brand: string;
+}
+
+export interface Tag {
+	id: number;
+	documentId: string;
+	name: string;
+	createdAt: Date;
+	updatedAt: Date;
+	publishedAt: Date;
 }
 
 export interface ApiResponse {

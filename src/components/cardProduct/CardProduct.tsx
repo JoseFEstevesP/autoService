@@ -1,4 +1,5 @@
 import { Button } from '../button/Button';
+import Stars from '../stars/Stars';
 import styles from './styles.module.scss';
 import type { CardProductProps } from './types';
 
@@ -6,8 +7,11 @@ const CardProduct = ({
 	image,
 	price,
 	title,
-	tag,
+	tags,
 	oldPrice,
+	brand,
+	model,
+	rating,
 	handleClick,
 	...props
 }: CardProductProps) => {
@@ -15,19 +19,28 @@ const CardProduct = ({
 		<section {...props} className={`${styles.cardProduct} ${props.className}`}>
 			<div className={styles.cardProduct__contentImage}>
 				<img src={image} alt={title} className={styles.cardProduct__image} />
-				{tag && <span className={styles.cardProduct__tag}>{tag}</span>}
+				{tags?.map((tag, index) => (
+					<span key={index} className={styles.cardProduct__tag}>
+						{tag.name}
+					</span>
+				))}
 			</div>
 			<div className={styles.cardProduct__content}>
+				<div className={styles.cardProduct__brand}>{brand}</div>
 				<h2 className={styles.cardProduct__title}>{title}</h2>
+				<div className={styles.cardProduct__model}>{model}</div>
+
+				<Stars rating={rating} className={styles.cardProduct__rating} />
+
 				<div className={styles.cardProduct__pricing}>
-					<p className={styles.cardProduct__price}>{price}</p>
+					<p className={styles.cardProduct__price}>${price}</p>
 					{oldPrice && (
-						<p className={styles.cardProduct__oldPrice}>{oldPrice}</p>
+						<p className={styles.cardProduct__oldPrice}>${oldPrice}</p>
 					)}
 				</div>
 				<div className={styles.cardProduct__buttons}>
 					<Button
-						text='Comprar '
+						text='Comprar'
 						className={`${Button.styles['button--default']} ${styles.cardProduct__button}`}
 						onClick={handleClick?.buy}
 					/>

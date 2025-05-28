@@ -1,13 +1,14 @@
 import { useParams } from 'react-router-dom';
 import LinkPer from '../../components/link/LinkPer';
+import Stars from '../../components/stars/Stars';
 import styles from './styles.module.scss';
 import type { ServiceType } from './types';
-import { Icons } from '../../components/icon/Icons';
 
 const ServiceDetail = () => {
 	const { data } = useParams<{ data?: string }>();
-
-	const service: ServiceType | null = data ? JSON.parse(data) : null;
+	const service: ServiceType | null = data
+		? JSON.parse(decodeURIComponent(data))
+		: null;
 
 	if (!service) {
 		return <div className={styles.serviceDetail}>Servicio no encontrado</div>;
@@ -22,31 +23,67 @@ const ServiceDetail = () => {
 					className={styles.serviceDetail__image}
 				/>
 			</div>
+
 			<div className={styles.serviceDetail__contentData}>
-				<h2 className={styles.serviceDetail__title}>{service.name}</h2>
+				<div className={styles.serviceDetail__header}>
+					<h2 className={styles.serviceDetail__title}>{service.name}</h2>
+					<span className={styles.serviceDetail__brand}>{service.brand}</span>
+				</div>
+
 				<div className={styles.serviceDetail__meta}>
-					<span className={styles.serviceDetail__price}>
-						${service.price.toFixed(2)}
-					</span>
-					<span className={styles.serviceDetail__rating}>
-						<Icons iconName='star' className={styles.serviceDetail__iconStar} />
-						{service.rating}/5
-					</span>
+					<div className={styles.serviceDetail__pricing}>
+						<span className={styles.serviceDetail__price}>
+							${service.price.toFixed(2)}
+						</span>
+						{service.taxable && (
+							<span className={styles.serviceDetail__oldPrice}>
+								${service.taxable.toFixed(2)}
+							</span>
+						)}
+					</div>
+
+					<Stars
+						rating={service.rating}
+						className={styles.serviceDetail__rating}
+					/>
+
+					<div className={styles.serviceDetail__tags}>
+						{service.tags?.map(tag => (
+							<span key={tag.id} className={styles.serviceDetail__tag}>
+								{tag.name}
+							</span>
+						))}
+					</div>
+
 					<span className={styles.serviceDetail__category}>
 						{service.category}
 					</span>
 				</div>
-				<p className={styles.serviceDetail__description}>
-					{service.description}
-				</p>
-				<LinkPer
-					to={`/default/cite/${service.documentId}`}
-					text='Citar Servicio'
-					className={styles.serviceDetail__link}
-					icon={{
-						iconName: 'calendar',
-					}}
-				/>
+
+				<div className={styles.serviceDetail__description}>
+					{service.description.split('\n').map((paragraph, i) => (
+						<p key={i}>{paragraph}</p>
+					))}
+				</div>
+
+				<div className={styles.serviceDetail__actions}>
+					<LinkPer
+						to={`/cite/${service.documentId}`}
+						text='Citar Servicio'
+						className={styles.serviceDetail__link}
+						icon={{
+							iconName: 'calendar',
+						}}
+					/>
+					<LinkPer
+						to='/services'
+						text='Ver más servicios'
+						className={styles.serviceDetail__linkSecondary}
+						icon={{
+							iconName: 'arrow',
+						}}
+					/>
+				</div>
 			</div>
 		</section>
 	);

@@ -1,90 +1,28 @@
 import CardProduct from '../../../../components/cardProduct/CardProduct';
+import Loader from '../../../../components/loader/Loader';
 import Section from '../../../../components/section/Section';
-
-const productCar = [
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Kit Premium Lavado Motor',
-		price: 'BS. 49.99',
-		oldPrice: 'BS. 59.99',
-		tag: 'Oferta',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Pulidor Profesional para Carrocería',
-		price: 'BS. 89.50',
-		oldPrice: 'BS. 99.90',
-		tag: 'Nuevo',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Cera Líquida Brillante',
-		price: 'BS. 65.00',
-		oldPrice: 'BS. 75.00',
-		tag: 'Popular',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Aspiradora Portátil para Auto',
-		price: 'BS. 120.00',
-		oldPrice: '',
-		tag: 'Destacado',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Limpiador Profesional para Tapizados',
-		price: 'BS. 55.50',
-		oldPrice: 'BS. 65.00',
-		tag: 'Oferta',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Kit Completo Limpieza Interior',
-		price: 'BS. 150.00',
-		oldPrice: 'BS. 180.00',
-		tag: 'Combo',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Desengrasante Motor 500ml',
-		price: 'BS. 35.00',
-		oldPrice: '',
-		tag: 'Básico',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Perfume para Auto - Aroma Fresco',
-		price: 'BS. 25.00',
-		oldPrice: 'BS. 30.00',
-		tag: 'Oferta',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Limpiador Especial para Llantas',
-		price: 'BS. 42.00',
-		oldPrice: 'BS. 50.00',
-		tag: 'Nuevo',
-	},
-	{
-		image:
-			'https://blog.continentalmotores.com/hubfs/Blog%20Continental%20Motores/Continental-motores-Cada-cuanto-le-haces-servicio-a-tu-auto.jpg',
-		title: 'Protector Solar para Pintura',
-		price: 'BS. 95.00',
-		oldPrice: 'BS. 110.00',
-		tag: 'Recomendado',
-	},
-];
+import useGetProduct from './hooks/useGetProduct';
+import styles from './styles.module.scss';
 
 const Product = ({ className }: { className?: string }) => {
+	const { data, error, isLoading } = useGetProduct();
+
+	if (isLoading) return <Loader className={styles.product__loader} />;
+	if (error)
+		return (
+			<Loader
+				className={`${styles.product__loader} ${styles['product__loader--error']}`}
+				error
+			/>
+		);
+	if (!data?.length)
+		return (
+			<Loader
+				className={`${styles.product__loader} ${styles['product__loader--warning']}`}
+				warning
+			/>
+		);
+
 	const handleBuy = (productName: string) => {
 		console.log(`Producto comprado: ${productName}`);
 	};
@@ -92,6 +30,7 @@ const Product = ({ className }: { className?: string }) => {
 	const handleAddToCart = (productName: string) => {
 		console.log(`Añadido al carrito: ${productName}`);
 	};
+
 	return (
 		<Section
 			className={`${className}`}
@@ -102,17 +41,20 @@ const Product = ({ className }: { className?: string }) => {
 				textLink: 'Ver más productos',
 			}}
 		>
-			{productCar.map((product, index) => (
+			{data.map(product => (
 				<CardProduct
-					key={index}
+					key={product.id}
 					image={product.image}
-					title={product.title}
-					price={product.price}
-					oldPrice={product.oldPrice}
-					tag={product.tag}
+					title={product.name}
+					price={product.price.toFixed(2)}
+					oldPrice={product.taxable.toFixed(2)}
+					tags={product.tags}
+					brand={product.brand}
+					model={product.model}
+					rating={product.rating}
 					handleClick={{
-						buy: () => handleBuy(product.title),
-						addToCart: () => handleAddToCart(product.title),
+						buy: () => handleBuy(product.name),
+						addToCart: () => handleAddToCart(product.name),
 					}}
 				/>
 			))}

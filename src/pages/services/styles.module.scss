@@ -2,29 +2,33 @@
 
 .serviceDetail {
 	font-size: 1rem;
-	width: max(18.75em, 70%);
-	margin: 0 auto;
+	width: min(90%, 60em);
+	margin: 2em auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	@include defaultStyles($background: transparent);
+	@include defaultStyles;
 	overflow: hidden;
 
 	&__contentImage {
 		width: 100%;
-		height: 100%;
+		height: 15rem;
 		position: relative;
-		clip-path: var(--clip-path-top);
+		overflow: hidden;
 
-		@media screen and (min-width: 1024px) {
-			height: 12.5em;
+		@media screen and (min-width: 768px) {
+			height: 10em;
 		}
 
 		&::after {
 			content: '';
 			position: absolute;
 			inset: 0;
-			background-image: linear-gradient(0deg, var(--background-transparent));
+			background: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.1) 0%,
+				transparent 100%
+			);
 		}
 	}
 
@@ -32,71 +36,133 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: scale(1.02);
+		}
 	}
 
 	&__contentData {
 		width: 100%;
-		height: 100%;
+		padding: 2em;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 1em;
-		gap: 1em;
+		gap: 1.5em;
+	}
+
+	&__header {
+		margin-bottom: 0.5em;
 	}
 
 	&__title {
-		font-size: 1.25em;
+		font-size: 1.8em;
 		margin: 0;
-		text-align: center;
+
+		@media screen and (min-width: 768px) {
+			font-size: 2em;
+		}
 	}
 
-	&__description {
-		font-size: 0.875em;
-		width: 100%;
-		margin: 0;
-		white-space: pre-line;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		padding: 1em;
-	}
-
-	&__link {
-		font-size: 1.125em;
-		padding: 0.3125em;
-		@include defaultStyles;
+	&__brand {
+		font-size: 1.1em;
+		color: var(--secondary-color);
+		font-weight: bold;
+		display: block;
 	}
 
 	&__meta {
 		display: flex;
-		gap: 1em;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-between;
+		gap: 1em;
 		align-items: center;
-		margin-bottom: 1em;
-		font-size: 0.9em;
+		padding-bottom: 1em;
+		border-bottom: 0.0625em solid var(--gry-color);
+	}
+
+	&__pricing {
+		display: flex;
+		align-items: center;
+		gap: 1em;
 	}
 
 	&__price {
+		font-size: 1.5em;
 		font-weight: bold;
 		color: var(--secondary-color);
 	}
 
-	&__rating {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 0.25em;
+	&__oldPrice {
+		font-size: 1.1em;
+		text-decoration: line-through;
+		color: var(--text-gry);
 	}
 
-	&__iconStar {
-		--size: 1.2em;
-		color: var(--star-color);
+	&__rating {
+		font-size: 1.2em;
+	}
+
+	&__tags {
+		display: flex;
+		gap: 0.5em;
+		flex-wrap: wrap;
+	}
+
+	&__tag {
+		color: var(--secondary-color);
+		font-size: 0.9em;
+		font-weight: bold;
 	}
 
 	&__category {
-		background-color: var(--background-secondary);
-		padding: 0.2em 0.5em;
-		border-radius: 0.3em;
+		font-size: 0.9em;
+	}
+
+	&__description {
+		font-size: 1.1em;
+		line-height: 1.6;
+
+		p {
+			margin: 0 0 0.6em 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__actions {
+		display: flex;
+		gap: 1em;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__link {
+		padding: 0.3125em 0.625em;
+		@include defaultStyles($background: var(--secondary-color));
+		transition:
+			background-color 0.2s ease,
+			transform 0.2s ease;
+
+		&:hover {
+			background-color: var(--secondary-dark);
+			transform: translateY(-2px);
+		}
+	}
+
+	&__linkSecondary {
+		padding: 0.3125em 0.625em;
+		@include defaultStyles($background: var(--secondary-color));
+		transition:
+			background-color 0.2s ease,
+			transform 0.2s ease;
+
+		&:hover {
+			background-color: var(--secondary-dark);
+			transform: translateY(-2px);
+		}
 	}
 }

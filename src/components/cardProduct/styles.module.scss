@@ -1,25 +1,21 @@
+@use '../../styles/mixin.scss' as *;
 .cardProduct {
 	font-size: 1rem;
 	width: 18.75em;
 	min-width: 18.75em;
-	height: 23.75em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1em;
+	gap: 0.8em;
 	position: relative;
-	border-radius: var(--border-radius);
-	border: 0.0625em solid var(--secondary-color);
-	background-color: var(--primary-color);
+	@include defaultStyles;
 	overflow: hidden;
-	transition:
-		transform 0.3s ease,
-		box-shadow 0.3s ease;
+	transition: transform 0.3s ease;
 
 	&:hover {
 		transform: translateY(-0.3125em);
-		box-shadow: 0 0.25em 0.9375em rgba(0, 0, 0, 0.1);
 	}
+
 	&__contentImage {
 		width: 100%;
 		height: 12.5em;
@@ -27,12 +23,26 @@
 		justify-content: center;
 		align-items: center;
 		position: relative;
+		background-color: var(--secondary-color);
+		clip-path: var(--clip-path-top);
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.7) 0%,
+				transparent 50%
+			);
+		}
 	}
 
 	&__image {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		object-fit: contain;
+		padding: 1em;
 		transition: transform 0.3s ease;
 
 		.cardProduct:hover & {
@@ -46,41 +56,64 @@
 		right: 1em;
 		font-size: 0.8em;
 		font-weight: bold;
-		color: var(--secondary-color);
+		padding: 0.3em 0.6em;
+		@include defaultStyles;
 	}
 
 	&__content {
 		width: 100%;
 		height: 100%;
-		padding: 0.5em;
+		padding: 0.8em;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
-		gap: 0.8em;
+		gap: 0.6em;
+	}
+
+	&__brand {
+		font-size: 0.9em;
+		font-weight: bold;
+		color: var(--secondary-color);
+		text-transform: uppercase;
 	}
 
 	&__title {
-		font-size: 1.2em;
+		font-size: 1.1em;
 		margin: 0;
 		text-align: center;
+		overflow: hidden;
+	}
+
+	&__model {
+		font-size: 0.9em;
+		color: var(--text-gry);
+		text-align: center;
+	}
+
+	&__rating {
+		font-size: 1.1em;
 	}
 
 	&__pricing {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		gap: 0.8em;
+		margin: 0.5em 0;
 	}
 
 	&__price {
 		font-size: 1.3em;
 		font-weight: bold;
 		margin: 0;
+		color: var(--secondary-color);
 	}
 
 	&__oldPrice {
 		font-size: 0.9em;
 		text-decoration: line-through;
 		margin: 0;
+		color: var(--text-gry);
 	}
 
 	&__buttons {
@@ -88,6 +121,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 1em;
+		margin-top: auto;
 	}
 
 	&__button {

@@ -28,7 +28,8 @@ export type NameIcon =
 	| 'award'
 	| 'sun'
 	| 'moon'
-	| 'star';
+	| 'star'
+	| 'starEmpty';
 
 export interface IconParameter extends SVGProps<SVGSVGElement> {
 	iconName: NameIcon;
