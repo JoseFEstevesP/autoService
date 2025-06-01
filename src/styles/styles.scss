@@ -1,6 +1,8 @@
 @use './reset';
-
 :root {
+	color-scheme: light dark;
+
+	/* Tema claro por defecto */
 	--primary-color: #e3f2fd;
 	--secondary-color: #1976d2;
 	--background: #d5e2e8;
@@ -12,25 +14,13 @@
 	--warning-color: #eeff00;
 	--gry-color: #d3d3d3;
 
-	// structure
+	/* Estructura */
 	--border-radius: 0.3125em;
 	--clip-path-top: polygon(0 0, 100% 0, 100% 96%, 0 98%);
 	--clip-path-top-and-bottom: polygon(0 5%, 100% 10%, 100% 96%, 0 98%);
 }
 
-html[data-theme='dark'] {
-	--primary-color: #1f3a47;
-	--secondary-color: #2ca7e3;
-	--background: #030b14;
-	--background-transparent: rgba(74, 74, 74, 0.6);
-	--text-gry: #abb0ba;
-	--accent-color: #f44336;
-	--star-color: #d3e200;
-	--error-color: #f44336;
-	--warning-color: #d3e200;
-	--gry-color: #424242;
-}
-
+/* Tema oscuro basado en preferencias del sistema */
 @media (prefers-color-scheme: dark) {
 	:root {
 		--primary-color: #1f3a47;
@@ -38,25 +28,36 @@ html[data-theme='dark'] {
 		--background: #030b14;
 		--background-transparent: rgba(74, 74, 74, 0.6);
 		--text-gry: #abb0ba;
-		--accent-color: #f44336;
 		--star-color: #d3e200;
-		--error-color: #f44336;
 		--warning-color: #d3e200;
 		--gry-color: #424242;
 	}
+}
 
-	html[data-theme='light'] {
-		--primary-color: #e3f2fd;
-		--secondary-color: #1976d2;
-		--background: #d5e2e8;
-		--background-transparent: rgba(255, 255, 255, 0.6);
-		--text-gry: #424242;
-		--accent-color: #ff5252;
-		--star-color: #eeff00;
-		--error-color: #f44336;
-		--warning-color: #eeff00;
-		--gry-color: #d3d3d3;
-	}
+/* Override manual para tema oscuro */
+html[data-theme='dark'] {
+	color-scheme: dark;
+	--primary-color: #1f3a47;
+	--secondary-color: #2ca7e3;
+	--background: #030b14;
+	--background-transparent: rgba(74, 74, 74, 0.6);
+	--text-gry: #abb0ba;
+	--star-color: #d3e200;
+	--warning-color: #d3e200;
+	--gry-color: #424242;
+}
+
+/* Override manual para tema claro */
+html[data-theme='light'] {
+	color-scheme: light;
+	--primary-color: #e3f2fd;
+	--secondary-color: #1976d2;
+	--background: #d5e2e8;
+	--background-transparent: rgba(255, 255, 255, 0.6);
+	--text-gry: #424242;
+	--star-color: #eeff00;
+	--warning-color: #eeff00;
+	--gry-color: #d3d3d3;
 }
 
 #root {
