@@ -28,7 +28,7 @@ const CardProduct = ({
 			<div className={styles.cardProduct__content}>
 				<div className={styles.cardProduct__brand}>{brand}</div>
 				<h2 className={styles.cardProduct__title}>{title}</h2>
-				<div className={styles.cardProduct__model}>{model}</div>
+				<div className={styles.cardProduct__model}>{model.name}</div>
 
 				<Stars rating={rating || 0} className={styles.cardProduct__rating} />
 

@@ -1,11 +1,11 @@
-import LinkPer from '../link/LinkPer';
+import { Button } from '../button/Button';
 import Stars from '../stars/Stars';
 import styles from './styles.module.scss';
 import type { CardServicesProps } from './types';
 
 const CardServices = ({
 	image,
-	to,
+	handleData,
 	price,
 	oldPrice,
 	rating,
@@ -48,9 +48,10 @@ const CardServices = ({
 					)}
 				</div>
 
-				<LinkPer
+				<Button
+					title={`ver detalles de ${props.title}`}
+					onClick={handleData}
 					className={styles.cardServices__link}
-					to={to}
 					text='Ver detalles'
 					icon={{
 						iconName: 'arrow',

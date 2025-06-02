@@ -2,10 +2,10 @@ import { useContext, useEffect, useState } from 'react';
 import { router } from '../../../../../constants/router';
 import { ContextMsg } from '../../../../../context/msg/MsgContext';
 import useGet from '../../../../../hooks/useGet/useGet';
-import type { ApiResponse } from '../../../../product/types';
+import type { ProductsResponse } from '../../../../catalog/components/servicesAndProducts/types';
 
 const useGetProduct = () => {
-	const { useGetQuery } = useGet<ApiResponse>();
+	const { useGetQuery } = useGet<ProductsResponse>();
 	const { setMsg } = useContext(ContextMsg);
 	const [page] = useState(1);
 	const name = 'services';
@@ -15,7 +15,7 @@ const useGetProduct = () => {
 		params: {
 			populate: '*',
 			'pagination[page]': page,
-			'pagination[pageSize]': 2,
+			'pagination[pageSize]': 10,
 			'filters[catalog][$eq]': 'producto',
 		},
 	});

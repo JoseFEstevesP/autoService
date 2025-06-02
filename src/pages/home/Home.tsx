@@ -1,4 +1,3 @@
-import Footer from '../../components/footer/Footer';
 import Cite from './components/cite/Cite';
 import Header from './components/header/Header';
 import Newsletter from './components/newsletter/Newsletter';
@@ -17,7 +16,6 @@ const Home = () => {
 				<Price />
 				<Newsletter />
 			</main>
-			<Footer />
 		</main>
 	);
 };

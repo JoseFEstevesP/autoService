@@ -13,6 +13,7 @@
 	--error-color: #f44336;
 	--warning-color: #eeff00;
 	--gry-color: #d3d3d3;
+	--modal-color: rgba(255, 255, 255, 0.6);
 
 	/* Estructura */
 	--border-radius: 0.3125em;
@@ -31,6 +32,7 @@
 		--star-color: #d3e200;
 		--warning-color: #d3e200;
 		--gry-color: #424242;
+		--modal-color: rgba(74, 74, 74, 0.6);
 	}
 }
 
@@ -45,6 +47,7 @@ html[data-theme='dark'] {
 	--star-color: #d3e200;
 	--warning-color: #d3e200;
 	--gry-color: #424242;
+	--modal-color: rgba(74, 74, 74, 0.6);
 }
 
 /* Override manual para tema claro */
@@ -58,6 +61,7 @@ html[data-theme='light'] {
 	--star-color: #eeff00;
 	--warning-color: #eeff00;
 	--gry-color: #d3d3d3;
+	--modal-color: rgba(255, 255, 255, 0.6);
 }
 
 #root {

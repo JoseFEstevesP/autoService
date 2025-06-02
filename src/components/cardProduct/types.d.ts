@@ -8,7 +8,7 @@ export interface CardProductProps extends HTMLAttributes<HTMLElement> {
 	oldPrice?: number | string;
 	tags?: Tag[];
 	brand?: string;
-	model?: string;
+	model?: Model;
 	rating?: number;
 	handleClick?: {
 		buy?: () => void;

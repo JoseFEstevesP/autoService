@@ -1,3 +1,5 @@
+@use '../../styles/mixin' as *;
+
 .button {
 	font-size: 1rem;
 	display: flex;
@@ -50,9 +52,7 @@
 	}
 
 	&--default {
-		background-color: var(--primary-color);
-		border: 0.0625em solid var(--secondary-color);
-		border-radius: var(--border-radius);
+		@include defaultStyles;
 		padding: 0.3125em 0.625em;
 		text-wrap: wrap;
 		transition: transform 0.3s ease;

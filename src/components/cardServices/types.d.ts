@@ -3,7 +3,7 @@ import type { Tag } from '../../pages/services/types';
 
 export interface CardServicesProps extends HTMLAttributes<HTMLElement> {
 	image: string;
-	to: string;
+	handleData: () => void;
 	title: string;
 	price: number;
 	oldPrice?: number;

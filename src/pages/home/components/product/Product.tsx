@@ -44,7 +44,7 @@ const Product = ({ className }: { className?: string }) => {
 			{data.map(product => (
 				<CardProduct
 					key={product.id}
-					image={product.image}
+					image={product.image.url}
 					title={product.name}
 					price={product.price.toFixed(2)}
 					oldPrice={product.taxable.toFixed(2)}
