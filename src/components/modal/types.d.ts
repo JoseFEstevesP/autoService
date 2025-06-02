@@ -1,11 +1,10 @@
-import React from 'react';
+import { type ReactNode } from 'react';
 
 export interface ModalProps {
 	className?: string;
-	children: React.ReactNode;
+	children: ReactNode;
 	isOpen: boolean;
 	handleClose: () => void;
-	title: string;
 }
 
 interface UseModalProps {

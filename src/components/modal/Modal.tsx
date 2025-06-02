@@ -7,7 +7,6 @@ const Modal = ({
 	children,
 	isOpen,
 	handleClose,
-	title,
 }: ModalProps) => {
 	return (
 		<dialog className={`${className} ${style.modal}`} open={isOpen}>
@@ -16,17 +15,14 @@ const Modal = ({
 					isOpen ? style['modal__content--open'] : ''
 				}`}
 			>
-				<div className={style.modal__header}>
-					<h2 className={style.modal__title}>{title}</h2>
-					<Button
-						className={style.modal__btn}
-						icon={{
-							iconName: 'close',
-							className: `${style.modal__icon}`,
-						}}
-						onClick={handleClose}
-					/>
-				</div>
+				<Button
+					className={style.modal__btn}
+					icon={{
+						iconName: 'close',
+						className: `${style.modal__icon}`,
+					}}
+					onClick={handleClose}
+				/>
 				<div className={style.modal__children}>{children}</div>
 			</section>
 		</dialog>
