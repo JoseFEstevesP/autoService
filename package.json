@@ -23,8 +23,6 @@
 		"zod": "3.25.32"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "19.8.1",
-		"@commitlint/config-conventional": "19.8.1",
 		"@eslint/js": "9.27.0",
 		"@tanstack/eslint-plugin-query": "5.78.0",
 		"@types/react": "19.1.6",
