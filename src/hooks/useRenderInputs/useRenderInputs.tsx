@@ -1,13 +1,20 @@
 import type { FieldValues } from 'react-hook-form';
 import { Input } from '../../components/input/Input';
 import type { ErrorInput } from '../../components/input/types';
-import type { RenderInputType, UseRenderInputsType } from './types';
+import { SelectMultiple } from '../../components/select/SelectMultiple';
+import { SelectSingle } from '../../components/select/SelectSingle';
+import type {
+	RenderInputType,
+	RenderSelectMultipleType,
+	RenderSelectType,
+	UseRenderInputsType,
+} from './types';
 
 const useRenderInputs = <T extends FieldValues>({
 	register,
 	errors,
-}: // control,
-UseRenderInputsType<T>) => {
+	control,
+}: UseRenderInputsType<T>) => {
 	const renderInput = ({
 		name,
 		placeholder,
@@ -52,62 +59,62 @@ UseRenderInputsType<T>) => {
 	// 	/>
 	// );
 
-	// const renderSelect = ({
-	// 	name,
-	// 	placeholder,
-	// 	options,
-	// 	label,
-	// 	className,
-	// 	defaultValue,
-	// 	disabled,
-	// 	enableSearch,
-	// 	iconName,
-	// }: RenderSelectType) => (
-	// 	<SelectSingle<T>
-	// 		name={name}
-	// 		placeholder={placeholder}
-	// 		options={options}
-	// 		error={errors && (errors[name] as ErrorInput)}
-	// 		control={control}
-	// 		label={label}
-	// 		className={className}
-	// 		defaultValue={defaultValue}
-	// 		disabled={disabled}
-	// 		enableSearch={enableSearch}
-	// 		iconName={iconName}
-	// 	/>
-	// );
+	const renderSelect = ({
+		name,
+		placeholder,
+		options,
+		label,
+		className,
+		defaultValue,
+		disabled,
+		iconName,
+	}: RenderSelectType) =>
+		control ? (
+			<SelectSingle<T>
+				name={name}
+				placeholder={placeholder}
+				options={options}
+				error={errors && (errors[name] as ErrorInput)}
+				control={control}
+				label={label}
+				className={className}
+				defaultValue={defaultValue}
+				disabled={disabled}
+				enableSearch={options.length > 5}
+				iconName={iconName}
+			/>
+		) : null;
 
-	// const renderSelectMultiple = ({
-	// 	name,
-	// 	placeholder,
-	// 	options,
-	// 	label,
-	// 	className,
-	// 	defaultValue,
-	// 	disabled,
-	// 	enableSearch,
-	// 	iconName,
-	// }: RenderSelectMultipleType) => (
-	// 	<SelectMultiple
-	// 		name={name}
-	// 		placeholder={placeholder}
-	// 		options={options}
-	// 		error={errors && (errors[name] as ErrorInput)}
-	// 		control={control}
-	// 		label={label}
-	// 		className={className}
-	// 		defaultValue={defaultValue}
-	// 		disabled={disabled}
-	// 		enableSearch={enableSearch}
-	// 		iconName={iconName}
-	// 	/>
-	// );
+	const renderSelectMultiple = ({
+		name,
+		placeholder,
+		options,
+		label,
+		className,
+		defaultValue,
+		disabled,
+		iconName,
+	}: RenderSelectMultipleType) =>
+		control ? (
+			<SelectMultiple
+				name={name}
+				placeholder={placeholder}
+				options={options}
+				error={errors && (errors[name] as ErrorInput)}
+				control={control}
+				label={label}
+				className={className}
+				defaultValue={defaultValue}
+				disabled={disabled}
+				enableSearch={options.length > 5}
+				iconName={iconName}
+			/>
+		) : null;
 
 	return {
 		renderInput,
-		// renderSelect,
-		//  renderSelectMultiple,
+		renderSelect,
+		renderSelectMultiple,
 		//  renderInputFile
 	};
 };
