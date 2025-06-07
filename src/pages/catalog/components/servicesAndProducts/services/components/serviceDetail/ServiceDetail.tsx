@@ -15,6 +15,7 @@ const ServiceDetail = ({ data }: { data?: ServiceType }) => {
 					src={data.image.url}
 					alt={data.name}
 					className={styles.serviceDetail__image}
+					loading='lazy'
 				/>
 			</div>
 

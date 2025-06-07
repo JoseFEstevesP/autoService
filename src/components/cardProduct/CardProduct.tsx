@@ -19,7 +19,12 @@ const CardProduct = ({
 	return (
 		<section {...props} className={`${styles.cardProduct} ${props.className}`}>
 			<div className={styles.cardProduct__contentImage}>
-				<img src={image} alt={title} className={styles.cardProduct__image} />
+				<img
+					src={image}
+					alt={title}
+					className={styles.cardProduct__image}
+					loading='lazy'
+				/>
 				{tags?.map((tag, index) => (
 					<span key={index} className={styles.cardProduct__tag}>
 						{tag.name}

@@ -20,6 +20,7 @@ const CardServices = ({
 					src={image || '/img/defaultServices.png'}
 					alt={`image-${props.title}`}
 					className={styles.cardServices__image}
+					loading='lazy'
 				/>
 				<div className={styles.cardServices__header}>
 					{Array.isArray(tags) && tags.length > 0 && (
