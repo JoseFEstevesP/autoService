@@ -1,4 +1,4 @@
-import type { TransformEnumType } from './transformEnumType';
+import type { TransformEnumType } from './types';
 
 export const transformEnum = ({
 	transformEnum,
