@@ -14,4 +14,5 @@ export interface CardProductProps extends HTMLAttributes<HTMLElement> {
 		buy?: () => void;
 		addToCart?: () => void;
 	};
+	disabled?: boolean;
 }

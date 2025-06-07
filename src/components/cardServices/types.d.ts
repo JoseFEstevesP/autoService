@@ -9,4 +9,5 @@ export interface CardServicesProps extends HTMLAttributes<HTMLElement> {
 	oldPrice?: number;
 	rating: number;
 	tags: Tag[];
+	disabled?: boolean;
 }

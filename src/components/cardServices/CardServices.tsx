@@ -10,6 +10,7 @@ const CardServices = ({
 	oldPrice,
 	rating,
 	tags,
+	disabled = false,
 	...props
 }: CardServicesProps) => {
 	return (
@@ -56,6 +57,7 @@ const CardServices = ({
 					icon={{
 						iconName: 'arrow',
 					}}
+					disabled={disabled}
 				/>
 			</div>
 		</section>

@@ -13,6 +13,7 @@ const CardProduct = ({
 	model,
 	rating,
 	handleClick,
+	disabled = false,
 	...props
 }: CardProductProps) => {
 	return (
@@ -43,12 +44,14 @@ const CardProduct = ({
 						text='Comprar'
 						className={`${Button.styles['button--default']} ${styles.cardProduct__button}`}
 						onClick={handleClick?.buy}
+						disabled={disabled}
 					/>
 					<Button
 						icon={{ iconName: 'shopCar' }}
 						aria-label='Añadir al carrito'
 						className={`${Button.styles['button--default']} ${styles.cardProduct__button}`}
 						onClick={handleClick?.addToCart}
+						disabled={disabled}
 					/>
 				</div>
 			</div>

@@ -3,6 +3,7 @@
 	font-size: 1rem;
 	width: 18.75em;
 	min-width: 18.75em;
+	min-height: 30em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -68,6 +69,7 @@
 		justify-content: space-between;
 		flex-direction: column;
 		gap: 0.6em;
+		flex: auto;
 	}
 
 	&__brand {
@@ -92,6 +94,7 @@
 
 	&__rating {
 		font-size: 1.1em;
+		margin: 0;
 	}
 
 	&__pricing {
@@ -99,7 +102,6 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.8em;
-		margin: 0.5em 0;
 	}
 
 	&__price {
@@ -121,7 +123,6 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 1em;
-		margin-top: auto;
 	}
 
 	&__button {
