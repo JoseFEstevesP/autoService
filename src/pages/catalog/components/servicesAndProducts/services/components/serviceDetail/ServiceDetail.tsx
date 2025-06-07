@@ -4,7 +4,6 @@ import type { ServiceType } from '../../../types';
 import styles from './styles.module.scss';
 
 const ServiceDetail = ({ data }: { data?: ServiceType }) => {
-	console.log(' ServiceDetail -> data:', data);
 	if (!data) {
 		return <div className={styles.serviceDetail}>Servicio no encontrado</div>;
 	}

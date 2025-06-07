@@ -16,7 +16,7 @@ export type NameIcon =
 	| 'user'
 	| 'wallet'
 	| 'x'
-	| 'arrow-small'
+	| 'arrowSmall'
 	| 'logo'
 	| 'padlock'
 	| 'add'
@@ -29,7 +29,13 @@ export type NameIcon =
 	| 'sun'
 	| 'moon'
 	| 'star'
-	| 'starEmpty';
+	| 'starEmpty'
+	| 'search'
+	| 'refresh'
+	| 'filter'
+	| 'checkBoxOn'
+	| 'checkBoxOff'
+	| 'arrowMin';
 
 export interface IconParameter extends SVGProps<SVGSVGElement> {
 	iconName: NameIcon;

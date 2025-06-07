@@ -51,7 +51,7 @@ const SubMenu = ({ item }: { item: MenuItem }) => {
 				className={`${styles.subMenu__btn} `}
 				onClick={() => setShow(!show)}
 				icon={{
-					iconName: 'arrow-small',
+					iconName: 'arrowSmall',
 					className: `${styles.subMenu__iconSub}`,
 				}}
 			/>

@@ -4,10 +4,10 @@ import { menuData } from '../../routes/default/menuData';
 import type { LayoutProps } from '../types';
 import styles from './styles.module.scss';
 
-const LayoutD = ({ children, title = 'Autoservice' }: LayoutProps) => {
+const LayoutD = ({ children, title = 'Sae motor pro' }: LayoutProps) => {
 	return (
 		<>
-			<title>{title}</title>
+			<title>Sae motor pro - {title}</title>
 			<main className={styles.layout}>
 				<header className={styles.layout__header}>
 					<InitBar items={menuData} />

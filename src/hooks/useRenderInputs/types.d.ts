@@ -37,8 +37,7 @@ export interface RenderSelectType {
 	className?: string;
 	defaultValue?: string;
 	disabled?: boolean;
-	enableSearch?: boolean;
-	iconName?: string;
+	iconName?: NameIcon;
 }
 
 export interface RenderSelectMultipleType {
@@ -49,6 +48,5 @@ export interface RenderSelectMultipleType {
 	className?: string;
 	defaultValue?: string[];
 	disabled?: boolean;
-	enableSearch?: boolean;
-	iconName?: string;
+	iconName?: NameIcon;
 }
