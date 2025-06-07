@@ -1,6 +1,35 @@
+@use '../../styles/mixin.scss' as *;
+
 .catalog {
 	width: 100%;
-	height: 100dvh;
 	font-size: 1rem;
-	padding: 1em 1em 2em 1em;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	gap: 1em;
+
+	&__title {
+		margin: 0;
+		font-size: 1.8rem;
+	}
+
+	&__description {
+		margin: 0;
+		font-size: 1.2rem;
+	}
+
+	&__links {
+		display: flex;
+		gap: 1em;
+	}
+
+	&__link {
+		padding: 0.3125em 0.625em;
+		@include defaultStyles();
+
+		&--active {
+			@include defaultStyles(var(--primary-color), var(--secondary-color));
+		}
+	}
 }

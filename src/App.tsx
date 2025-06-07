@@ -4,8 +4,11 @@ import LayoutD from './layout/layoutD/LayoutD';
 import LayoutOfMenu from './layout/layoutOfMenu/LayoutOfMenu';
 import About from './pages/about/About';
 import Catalog from './pages/catalog/Catalog';
-import Services from './pages/home/components/services/Services';
+import Products from './pages/catalog/components/servicesAndProducts/products/Products';
+import Services from './pages/catalog/components/servicesAndProducts/services/Services';
+import HomeServices from './pages/home/components/services/HomeServices';
 import Home from './pages/home/Home';
+
 export const App = () => {
 	return (
 		<>
@@ -22,7 +25,7 @@ export const App = () => {
 					path='/services'
 					element={
 						<LayoutD title='Servicios'>
-							<Services />
+							<HomeServices />
 						</LayoutD>
 					}
 				/>
@@ -34,15 +37,16 @@ export const App = () => {
 						</LayoutOfMenu>
 					}
 				/>
-				<Route path='/catalog'>
-					<Route
-						index
-						element={
-							<LayoutD title='Catálogo de servicios'>
-								<Catalog />
-							</LayoutD>
-						}
-					/>
+				<Route
+					path='/catalog'
+					element={
+						<LayoutD title='Catálogo'>
+							<Catalog />
+						</LayoutD>
+					}
+				>
+					<Route path='services' element={<Services />} />
+					<Route path='products' element={<Products />} />
 				</Route>
 			</Routes>
 			<Msg />

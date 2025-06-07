@@ -89,5 +89,7 @@ export interface ApiResponse<T> {
 	total: number;
 }
 
+export type GetName = 'servicio' | 'producto';
+
 export type ProductsResponse = ApiResponse<ProductType>;
 export type ServicesResponse = ApiResponse<ServiceType>;

@@ -9,7 +9,7 @@ export const menuData = [
 	},
 	{
 		text: 'Catalogo',
-		to: '/catalog',
+		to: '/catalog/services',
 	},
 	{
 		text: 'Citas',

@@ -1,0 +1,62 @@
+@use '../../../../../styles/mixin.scss' as *;
+
+.filters {
+	width: 100%;
+	min-width: 20em;
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	padding: 1em;
+	flex-direction: column;
+
+	&__grid {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+
+		flex-direction: column;
+	}
+
+	&__field {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 1em;
+
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+		}
+	}
+
+	&__contentField {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		flex-direction: column;
+	}
+
+	&__actions {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+	}
+
+	&__button {
+		width: 100%;
+		@include defaultStyles();
+		transition: background-color 0.3s ease;
+		&:hover {
+			background-color: var(--secondary-color);
+		}
+	}
+}
