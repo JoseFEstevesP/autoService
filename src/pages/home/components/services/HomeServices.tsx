@@ -3,11 +3,15 @@ import Loader from '../../../../components/loader/Loader';
 import Section from '../../../../components/section/Section';
 import useServiceDetailModal from '../../../catalog/components/servicesAndProducts/services/components/serviceDetailModal/hooks/useServiceDetailModal';
 import ServiceDetailModal from '../../../catalog/components/servicesAndProducts/services/components/serviceDetailModal/ServiceDetailModal';
-import useGetServices from './hooks/useGetServices';
+import type { ServicesResponse } from '../../../catalog/components/servicesAndProducts/types';
+import useGetServicesAndProducts from '../../../catalog/hooks/useGetServicesAndProducts';
 import styles from './styles.module.scss';
 
-const Services = ({ className }: { className?: string }) => {
-	const { data, error, isLoading } = useGetServices();
+const HomeServices = ({ className }: { className?: string }) => {
+	const { data, error, isLoading } =
+		useGetServicesAndProducts<ServicesResponse>({
+			getName: 'servicio',
+		});
 	const { dataDetail, handleData, serviceDetailModal } =
 		useServiceDetailModal();
 
@@ -19,7 +23,7 @@ const Services = ({ className }: { className?: string }) => {
 				error
 			/>
 		);
-	if (!data?.length)
+	if (!data?.data?.length)
 		return (
 			<Loader
 				className={`${styles.services__loader} ${styles['services__loader--warning']}`}
@@ -38,11 +42,11 @@ const Services = ({ className }: { className?: string }) => {
 				title='Nuestros Servicios'
 				description='Ofrecemos una amplia gama de servicios para mantener tu vehículo en óptimas condiciones.'
 				link={{
-					to: '/services',
+					to: '/catalog/services',
 					textLink: 'Ver más servicios',
 				}}
 			>
-				{data.map(service => (
+				{data.data.map(service => (
 					<CardServices
 						key={service.id}
 						image={service.image.url}
@@ -59,4 +63,4 @@ const Services = ({ className }: { className?: string }) => {
 	);
 };
 
-export default Services;
+export default HomeServices;

@@ -1,11 +1,15 @@
 import CardProduct from '../../../../components/cardProduct/CardProduct';
 import Loader from '../../../../components/loader/Loader';
 import Section from '../../../../components/section/Section';
-import useGetProduct from './hooks/useGetProduct';
+import type { ProductsResponse } from '../../../catalog/components/servicesAndProducts/types';
+import useGetServicesAndProducts from '../../../catalog/hooks/useGetServicesAndProducts';
 import styles from './styles.module.scss';
 
-const Product = ({ className }: { className?: string }) => {
-	const { data, error, isLoading } = useGetProduct();
+const HomeProduct = ({ className }: { className?: string }) => {
+	const { data, error, isLoading } =
+		useGetServicesAndProducts<ProductsResponse>({
+			getName: 'producto',
+		});
 
 	if (isLoading) return <Loader className={styles.product__loader} />;
 	if (error)
@@ -15,7 +19,7 @@ const Product = ({ className }: { className?: string }) => {
 				error
 			/>
 		);
-	if (!data?.length)
+	if (!data?.data?.length)
 		return (
 			<Loader
 				className={`${styles.product__loader} ${styles['product__loader--warning']}`}
@@ -37,11 +41,11 @@ const Product = ({ className }: { className?: string }) => {
 			title='Nuestros  Productos'
 			description='Ofrecemos una amplia gama de productos para mantener tu vehículo en óptimas condiciones.'
 			link={{
-				to: '/products',
+				to: '/catalog/products',
 				textLink: 'Ver más productos',
 			}}
 		>
-			{data.map(product => (
+			{data.data.map(product => (
 				<CardProduct
 					key={product.id}
 					image={product.image.url}
@@ -61,4 +65,4 @@ const Product = ({ className }: { className?: string }) => {
 		</Section>
 	);
 };
-export default Product;
+export default HomeProduct;
