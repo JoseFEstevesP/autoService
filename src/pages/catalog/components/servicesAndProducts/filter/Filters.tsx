@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '../../../../../components/button/Button';
 import useRenderInputs from '../../../../../hooks/useRenderInputs/useRenderInputs';
-import { FilterSchema, type FilterType } from './dto/Filter';
+import { FilterSchema, type FilterType } from './dto/FilterDto';
 import styles from './styles.module.scss';
 import type { FiltersProps } from './types';
 

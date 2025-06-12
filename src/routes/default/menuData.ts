@@ -13,7 +13,7 @@ export const menuData = [
 	},
 	{
 		text: 'Citas',
-		to: '/schedule',
+		to: '/quotes/1',
 	},
 	{
 		text: 'Pagos',

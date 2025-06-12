@@ -4,10 +4,11 @@ import Loader from '../../../../../components/loader/Loader';
 import Pagination from '../../../../../components/pagination/Pagination';
 import { Order } from '../../../../../data';
 import { transformEnum } from '../../../../../helper/functions/transformEnum/transformEnum';
+import useAddCart from '../../../../../hooks/useAddCart/useAddCart';
 import useGetServicesAndProducts from '../../../hooks/useGetServicesAndProducts';
-import type { FilterType } from '../filter/dto/Filter';
+import type { FilterType } from '../filter/dto/FilterDto';
 import Filters from '../filter/Filters';
-import type { ProductsResponse } from '../types';
+import type { ProductsResponse, ProductType } from '../types';
 import styles from './styles.module.scss';
 
 const initialFilters: FilterType = {
@@ -44,6 +45,7 @@ const Products = () => {
 			getName: 'producto',
 			initialFilters: initialFilters,
 		});
+	const { addToCart } = useAddCart();
 
 	const onFilter = useCallback(
 		(filter: FilterType) => {
@@ -82,8 +84,8 @@ const Products = () => {
 		console.log(`Producto comprado: ${productName}`);
 	};
 
-	const handleAddToCart = (productName: string) => {
-		console.log(`Añadido al carrito: ${productName}`);
+	const handleAddToCart = (productName: ProductType) => {
+		addToCart(productName);
 	};
 
 	return (
@@ -114,7 +116,7 @@ const Products = () => {
 						rating={product.rating}
 						handleClick={{
 							buy: () => handleBuy(product.name),
-							addToCart: () => handleAddToCart(product.name),
+							addToCart: () => handleAddToCart(product),
 						}}
 					/>
 				))}

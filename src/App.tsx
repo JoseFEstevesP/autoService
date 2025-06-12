@@ -8,6 +8,7 @@ import Products from './pages/catalog/components/servicesAndProducts/products/Pr
 import Services from './pages/catalog/components/servicesAndProducts/services/Services';
 import HomeServices from './pages/home/components/services/HomeServices';
 import Home from './pages/home/Home';
+import Quotes from './pages/quotes/Quotes';
 
 export const App = () => {
 	return (
@@ -15,7 +16,7 @@ export const App = () => {
 			<Routes>
 				<Route
 					element={
-						<LayoutOfMenu>
+						<LayoutOfMenu title='Inicio'>
 							<Home />
 						</LayoutOfMenu>
 					}
@@ -48,6 +49,15 @@ export const App = () => {
 					<Route path='services' element={<Services />} />
 					<Route path='products' element={<Products />} />
 				</Route>
+
+				<Route
+					path='/quotes/:serviceId'
+					element={
+						<LayoutD title='Citas'>
+							<Quotes />
+						</LayoutD>
+					}
+				/>
 			</Routes>
 			<Msg />
 		</>

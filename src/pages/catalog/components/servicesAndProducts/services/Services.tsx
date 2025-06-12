@@ -5,7 +5,7 @@ import Pagination from '../../../../../components/pagination/Pagination';
 import { Order } from '../../../../../data';
 import { transformEnum } from '../../../../../helper/functions/transformEnum/transformEnum';
 import useGetServicesAndProducts from '../../../hooks/useGetServicesAndProducts';
-import type { FilterType } from '../filter/dto/Filter';
+import type { FilterType } from '../filter/dto/FilterDto';
 import Filters from '../filter/Filters';
 import type { ServicesResponse } from '../types';
 import useServiceDetailModal from './components/serviceDetailModal/hooks/useServiceDetailModal';

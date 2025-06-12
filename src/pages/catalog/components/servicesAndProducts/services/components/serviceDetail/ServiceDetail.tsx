@@ -7,6 +7,7 @@ const ServiceDetail = ({ data }: { data?: ServiceType }) => {
 	if (!data) {
 		return <div className={styles.serviceDetail}>Servicio no encontrado</div>;
 	}
+	console.log(' ServiceDetail -> data:', data);
 
 	return (
 		<section className={styles.serviceDetail}>
@@ -63,7 +64,7 @@ const ServiceDetail = ({ data }: { data?: ServiceType }) => {
 
 				<div className={styles.serviceDetail__actions}>
 					<LinkPer
-						to={`/cite/${data.documentId}`}
+						to={`/quotes/${data.documentId}`}
 						text='Citar Servicio'
 						className={styles.serviceDetail__link}
 						icon={{
@@ -71,7 +72,7 @@ const ServiceDetail = ({ data }: { data?: ServiceType }) => {
 						}}
 					/>
 					<LinkPer
-						to='/services'
+						to='/catalog/services'
 						text='Ver más servicios'
 						className={styles.serviceDetail__linkSecondary}
 						icon={{

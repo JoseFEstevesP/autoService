@@ -3,6 +3,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App.tsx';
+import { CartProvider } from './context/cart/CartProvider.tsx';
 import { MsgProvider } from './context/msg/MsgProvider.tsx';
 import './styles/styles.scss';
 
@@ -12,9 +13,11 @@ createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<BrowserRouter>
 			<MsgProvider>
-				<QueryClientProvider client={queryClient}>
-					<App />
-				</QueryClientProvider>
+				<CartProvider>
+					<QueryClientProvider client={queryClient}>
+						<App />
+					</QueryClientProvider>
+				</CartProvider>
 			</MsgProvider>
 		</BrowserRouter>
 	</StrictMode>,
