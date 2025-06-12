@@ -1,7 +1,7 @@
-import CardDecorative from '../../components/cardDecorative/CardDecorative';
-import InitBar from '../../components/initBar/InitBar';
-import LinkPer from '../../components/link/LinkPer';
-import { menuData } from '../../routes/default/menuData';
+import CardDecorative from '@/components/common/Cards/cardDecorative/CardDecorative';
+import { menuData } from '@/components/common/Navigation/menuData';
+import InitBar from '@/components/ui/initBar/InitBar';
+import LinkPer from '@/components/ui/link/LinkPer';
 import styles from './styles.module.scss';
 
 const About = () => {

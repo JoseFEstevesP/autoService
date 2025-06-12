@@ -1,4 +1,4 @@
-import CardDecorative from '../../../../components/cardDecorative/CardDecorative';
+import CardDecorative from '@/components/common/Cards/cardDecorative/CardDecorative';
 import { methodsPayment } from './data';
 import styles from './styles.module.scss';
 

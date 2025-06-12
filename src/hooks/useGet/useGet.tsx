@@ -1,6 +1,6 @@
+import { FETCH_AXIOS } from '@/services/api/axios';
+import type { ParamsDataGet } from '@/types/types';
 import { useQuery } from '@tanstack/react-query';
-import { FETCH_AXIOS } from '../../constants/axios';
-import type { ParamsDataGet } from '../../types';
 
 const useGet = <TResponse, TParams extends ParamsDataGet = ParamsDataGet>() => {
 	const getData = async ({

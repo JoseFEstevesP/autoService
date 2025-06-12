@@ -1,5 +1,5 @@
+import type { ProductType } from '@/pages/catalog/components/servicesAndProducts/types';
 import { useEffect, useState, type ReactNode } from 'react';
-import type { ProductType } from '../../pages/catalog/components/servicesAndProducts/types';
 import { ContextCart } from './CartContext';
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {

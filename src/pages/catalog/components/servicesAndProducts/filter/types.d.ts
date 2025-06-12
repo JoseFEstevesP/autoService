@@ -1,4 +1,4 @@
-import type { ValueAll } from '../../../../../types';
+import type { ValueAll } from '@/types/types';
 
 export interface FiltersProps {
 	onFilter: (filters: FilterType) => void;

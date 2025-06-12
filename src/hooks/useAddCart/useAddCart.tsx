@@ -1,6 +1,6 @@
+import { ContextCart } from '@/context/cart/CartContext';
+import type { ProductType } from '@/pages/catalog/components/servicesAndProducts/types';
 import { useContext } from 'react';
-import { ContextCart } from '../../context/cart/CartContext';
-import type { ProductType } from '../../pages/catalog/components/servicesAndProducts/types';
 
 const useAddCart = () => {
 	const { cart, setCart } = useContext(ContextCart);

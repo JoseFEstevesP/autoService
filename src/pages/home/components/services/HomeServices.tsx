@@ -1,10 +1,10 @@
-import CardServices from '../../../../components/cardServices/CardServices';
-import Loader from '../../../../components/loader/Loader';
-import Section from '../../../../components/section/Section';
-import useServiceDetailModal from '../../../catalog/components/servicesAndProducts/services/components/serviceDetailModal/hooks/useServiceDetailModal';
-import ServiceDetailModal from '../../../catalog/components/servicesAndProducts/services/components/serviceDetailModal/ServiceDetailModal';
-import type { ServicesResponse } from '../../../catalog/components/servicesAndProducts/types';
-import useGetServicesAndProducts from '../../../catalog/hooks/useGetServicesAndProducts';
+import CardServices from '@/components/common/Cards/cardServices/CardServices';
+import Loader from '@/components/ui/loader/Loader';
+import Section from '@/components/ui/section/Section';
+import useServiceDetailModal from '@/pages/catalog/components/servicesAndProducts/services/components/serviceDetailModal/hooks/useServiceDetailModal';
+import ServiceDetailModal from '@/pages/catalog/components/servicesAndProducts/services/components/serviceDetailModal/ServiceDetailModal';
+import type { ServicesResponse } from '@/pages/catalog/components/servicesAndProducts/types';
+import useGetServicesAndProducts from '@/pages/catalog/hooks/useGetServicesAndProducts';
 import styles from './styles.module.scss';
 
 const HomeServices = ({ className }: { className?: string }) => {

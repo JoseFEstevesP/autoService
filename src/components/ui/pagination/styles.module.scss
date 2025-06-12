@@ -1,0 +1,37 @@
+@use '@styles/mixin' as *;
+
+.pagination {
+	width: 100%;
+	min-width: 20em;
+	font-size: 1rem;
+	display: flex;
+	gap: 0.5em;
+	justify-content: center;
+	align-items: center;
+
+	&__button {
+		width: 2em;
+		height: 2em;
+		@include defaultStyles;
+		transition: background-color 0.3s ease;
+
+		&:hover {
+			background-color: var(--secondary-color);
+		}
+
+		&--active {
+			background-color: var(--secondary-color);
+
+			&:hover {
+				background-color: var(--primary-color);
+			}
+		}
+	}
+	&__icon {
+		rotate: 270deg;
+
+		&--right {
+			rotate: -270deg;
+		}
+	}
+}

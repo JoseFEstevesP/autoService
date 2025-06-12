@@ -1,5 +1,5 @@
+import { Order } from '@/data';
 import { z } from 'zod';
-import { Order } from '../../../../../../data';
 
 export const FilterSchema = z.object({
 	search: z.string().optional(),

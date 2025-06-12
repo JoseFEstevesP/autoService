@@ -1,7 +1,7 @@
+import { ContextMsg } from '@/context/msg/MsgContext';
+import useGet from '@/hooks/useGet/useGet';
+import { router } from '@/services/api/router';
 import { useContext, useEffect, useState } from 'react';
-import { router } from '../../../constants/router';
-import { ContextMsg } from '../../../context/msg/MsgContext';
-import useGet from '../../../hooks/useGet/useGet';
 import type { FilterType } from '../components/servicesAndProducts/filter/dto/FilterDto';
 import type {
 	GetName,

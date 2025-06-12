@@ -1,0 +1,68 @@
+@use '@styles/mixin' as *;
+
+.button {
+	font-size: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.625em;
+	border: 0;
+	position: relative;
+	text-transform: capitalize;
+
+	&--form {
+		width: 100%;
+		min-width: 50%;
+		border-radius: var(--border-radius);
+		background-color: var(--primary-color);
+		padding: 0.3125em 0.625em;
+		text-wrap: wrap;
+		transition: transform 0.3s ease;
+		border: 0.0625em solid var(--secondary-color);
+
+		&:hover {
+			transform: scale(0.99);
+		}
+
+		&:active {
+			transform: scale(1);
+		}
+	}
+
+	&__icon {
+		--size: 1.25em;
+	}
+
+	&__iconDisabled {
+		--size: 0.7em;
+
+		position: absolute;
+		top: calc(var(--size) / (-2));
+		right: calc(var(--size) / (-2));
+	}
+
+	&--disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.3;
+		}
+	}
+
+	&--default {
+		@include defaultStyles;
+		padding: 0.3125em 0.625em;
+		text-wrap: wrap;
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: scale(0.99);
+		}
+
+		&:active {
+			transform: scale(1);
+		}
+	}
+}

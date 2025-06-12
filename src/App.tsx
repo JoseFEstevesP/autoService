@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import Msg from './components/msg/Msg';
-import LayoutD from './layout/layoutD/LayoutD';
-import LayoutOfMenu from './layout/layoutOfMenu/LayoutOfMenu';
+import LayoutD from './components/common/Layout/layoutD/LayoutD';
+import LayoutOfMenu from './components/common/Layout/layoutOfMenu/LayoutOfMenu';
+import Msg from './components/ui/msg/Msg';
 import About from './pages/about/About';
 import Catalog from './pages/catalog/Catalog';
 import Products from './pages/catalog/components/servicesAndProducts/products/Products';

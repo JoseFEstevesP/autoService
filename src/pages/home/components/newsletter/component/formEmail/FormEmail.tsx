@@ -1,14 +1,14 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Button } from '../../../../../../components/button/Button';
-import type { NameIcon } from '../../../../../../components/icon/types';
-import useRenderInputs from '../../../../../../hooks/useRenderInputs/useRenderInputs';
 import {
 	NewsletterEmailSchema,
 	type NewsletterEmailSchemaType,
 } from './dto/newsletterEmail';
 import msg from './msg';
 import styles from './styles.module.scss';
+import useRenderInputs from '@/hooks/useRenderInputs/useRenderInputs';
+import { Button } from '@/components/ui/button/Button';
+import type { NameIcon } from '@/components/ui/icon/types';
 
 const FormEmail = () => {
 	const {

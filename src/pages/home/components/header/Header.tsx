@@ -1,7 +1,7 @@
-import InitBar from '../../../../components/initBar/InitBar';
-import { menuData } from '../../../../routes/default/menuData';
+import InitBar from '@/components/ui/initBar/InitBar';
 import Welcome from '../welcome/Welcome';
 import styles from './styles.module.scss';
+import { menuData } from '@/components/common/Navigation/menuData';
 
 const Header = ({ className }: { className?: string }) => {
 	return (

@@ -1,12 +1,12 @@
-import CardProduct from '../../../../components/cardProduct/CardProduct';
-import Loader from '../../../../components/loader/Loader';
-import Section from '../../../../components/section/Section';
-import useAddCart from '../../../../hooks/useAddCart/useAddCart';
+import CardProduct from '@/components/common/Cards/cardProduct/CardProduct';
+import Loader from '@/components/ui/loader/Loader';
+import Section from '@/components/ui/section/Section';
+import useAddCart from '@/hooks/useAddCart/useAddCart';
 import type {
 	ProductsResponse,
 	ProductType,
-} from '../../../catalog/components/servicesAndProducts/types';
-import useGetServicesAndProducts from '../../../catalog/hooks/useGetServicesAndProducts';
+} from '@/pages/catalog/components/servicesAndProducts/types';
+import useGetServicesAndProducts from '@/pages/catalog/hooks/useGetServicesAndProducts';
 import styles from './styles.module.scss';
 
 const HomeProduct = ({ className }: { className?: string }) => {

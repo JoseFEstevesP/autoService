@@ -1,5 +1,5 @@
-import Modal from '../../../../../../../components/modal/Modal';
-import type { UseModalReturn } from '../../../../../../../components/modal/types';
+import Modal from '@/components/ui/modal/Modal';
+import type { UseModalReturn } from '@/components/ui/modal/types';
 import type { ServiceType } from '../../../types';
 import ServiceDetail from '../serviceDetail/ServiceDetail';
 

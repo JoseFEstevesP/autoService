@@ -1,11 +1,11 @@
+import CardProduct from '@/components/common/Cards/cardProduct/CardProduct';
+import Loader from '@/components/ui/loader/Loader';
+import Pagination from '@/components/ui/pagination/Pagination';
+import { Order } from '@/data';
+import { transformEnum } from '@/helper/functions/transformEnum/transformEnum';
+import useAddCart from '@/hooks/useAddCart/useAddCart';
+import useGetServicesAndProducts from '@/pages/catalog/hooks/useGetServicesAndProducts';
 import { useCallback } from 'react';
-import CardProduct from '../../../../../components/cardProduct/CardProduct';
-import Loader from '../../../../../components/loader/Loader';
-import Pagination from '../../../../../components/pagination/Pagination';
-import { Order } from '../../../../../data';
-import { transformEnum } from '../../../../../helper/functions/transformEnum/transformEnum';
-import useAddCart from '../../../../../hooks/useAddCart/useAddCart';
-import useGetServicesAndProducts from '../../../hooks/useGetServicesAndProducts';
 import type { FilterType } from '../filter/dto/FilterDto';
 import Filters from '../filter/Filters';
 import type { ProductsResponse, ProductType } from '../types';

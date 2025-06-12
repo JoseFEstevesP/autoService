@@ -1,4 +1,4 @@
-import type { NameIcon } from '../../../../components/icon/types';
+import type { NameIcon } from '@/components/ui/icon/types';
 
 export const methodsPayment: Array<{
 	title: string;

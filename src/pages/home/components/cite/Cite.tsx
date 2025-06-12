@@ -1,4 +1,4 @@
-import LinkPer from '../../../../components/link/LinkPer';
+import LinkPer from '@/components/ui/link/LinkPer';
 import styles from './styles.module.scss';
 
 const Cite = () => {

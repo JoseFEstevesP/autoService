@@ -1,5 +1,5 @@
+import type { ProductType } from '@/pages/catalog/components/servicesAndProducts/types';
 import { ReactNode } from 'react';
-import type { ProductType } from '../../pages/catalog/components/servicesAndProducts/types';
 
 export interface CartParameter {
 	children: ReactNode;

@@ -1,8 +1,9 @@
 import type { FieldValues } from 'react-hook-form';
-import { Input } from '../../components/input/Input';
-import type { ErrorInput } from '../../components/input/types';
-import { SelectMultiple } from '../../components/select/SelectMultiple';
-import { SelectSingle } from '../../components/select/SelectSingle';
+
+import { Input } from '@/components/ui/input/Input';
+import type { ErrorInput } from '@/components/ui/input/types';
+import { SelectMultiple } from '@/components/ui/select/SelectMultiple';
+import { SelectSingle } from '@/components/ui/select/SelectSingle';
 import type {
 	RenderInputType,
 	RenderSelectMultipleType,

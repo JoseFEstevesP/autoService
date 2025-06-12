@@ -1,7 +1,7 @@
-import LinkPer from '../../../../../../../components/link/LinkPer';
-import Stars from '../../../../../../../components/stars/Stars';
-import type { ServiceType } from '../../../types';
+import Stars from '@/components/ui/stars/Stars';
 import styles from './styles.module.scss';
+import LinkPer from '@/components/ui/link/LinkPer';
+import type { ServiceType } from '../../../types';
 
 const ServiceDetail = ({ data }: { data?: ServiceType }) => {
 	if (!data) {

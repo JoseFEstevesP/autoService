@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import useModal from '../../../../../../../../components/modal/hooks/useModal';
+import useModal from '@/components/ui/modal/hooks/useModal';
 import type { ServiceType } from '../../../../types';
 
 const useServiceDetailModal = () => {
