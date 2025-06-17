@@ -1,7 +1,7 @@
+import { Button } from '@/components/ui/button/Button';
 import Stars from '@/components/ui/stars/Stars';
 import styles from './styles.module.scss';
 import type { CardServicesProps } from './types';
-import { Button } from '@/components/ui/button/Button';
 
 const CardServices = ({
 	image,
@@ -51,9 +51,9 @@ const CardServices = ({
 				</div>
 
 				<Button
-					title={`ver detalles de ${props.title}`}
 					onClick={handleData}
 					className={styles.cardServices__link}
+					title='Ver detalles del servicio'
 					text='Ver detalles'
 					icon={{
 						iconName: 'arrow',

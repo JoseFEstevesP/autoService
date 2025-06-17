@@ -126,14 +126,14 @@ const Filters = ({
 					icon={{
 						iconName: 'refresh',
 					}}
-					text='Limpiar'
+					title='Limpiar'
 					className={styles.filters__button}
 					disabled={disabled}
 				/>
 
 				<Button
 					type='submit'
-					text='Aplicar filtros'
+					title='Aplicar filtros'
 					icon={{ iconName: 'filter' }}
 					className={styles.filters__button}
 					disabled={disabled}

@@ -46,12 +46,14 @@ const CardProduct = ({
 				</div>
 				<div className={styles.cardProduct__buttons}>
 					<Button
+						title='Comprar producto'
 						text='Comprar'
 						className={`${Button.styles['button--default']} ${styles.cardProduct__button}`}
 						onClick={handleClick?.buy}
 						disabled={disabled}
 					/>
 					<Button
+						title='Añadir al carrito'
 						icon={{ iconName: 'shopCar' }}
 						aria-label='Añadir al carrito'
 						className={`${Button.styles['button--default']} ${styles.cardProduct__button}`}

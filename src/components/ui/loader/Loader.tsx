@@ -8,7 +8,9 @@ const Loader = ({
 	...props
 }: { error?: boolean; warning?: boolean } & HTMLProps<HTMLDivElement>) => {
 	return (
-		<div className={`${style.loader} ${props.className}`}>
+		<div
+			className={`${style.loader} ${error ? style['loader--error'] : ''} ${warning ? style['loader--warning'] : ''} ${props.className}`}
+		>
 			<Icons
 				iconName='logo'
 				className={`${style.loader__icon} ${error ? style['loader__icon--error'] : ''} ${warning ? style['loader__icon--warning'] : ''}`}

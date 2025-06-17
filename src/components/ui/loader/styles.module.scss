@@ -1,13 +1,21 @@
 .loader {
 	width: 100%;
-	font-size: 1rem;
+	font-size: 0.75em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 
+	&--error {
+		font-size: 0.5em;
+	}
+
+	&--warning {
+		font-size: 0.5em;
+	}
+
 	&__icon {
-		--size: 25em;
+		--size: 15.625em;
 
 		width: var(--size);
 		height: var(--size);
@@ -26,7 +34,7 @@
 	}
 
 	&__sniper {
-		--size: 26em;
+		--size: 18.75em;
 
 		width: var(--size);
 		height: var(--size);

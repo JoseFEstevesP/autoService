@@ -1,9 +1,9 @@
 import CardServices from '@/components/common/Cards/cardServices/CardServices';
 import Loader from '@/components/ui/loader/Loader';
 import Section from '@/components/ui/section/Section';
-import useServiceDetailModal from '@/pages/catalog/components/servicesAndProducts/services/components/serviceDetailModal/hooks/useServiceDetailModal';
-import ServiceDetailModal from '@/pages/catalog/components/servicesAndProducts/services/components/serviceDetailModal/ServiceDetailModal';
-import type { ServicesResponse } from '@/pages/catalog/components/servicesAndProducts/types';
+import useServiceDetailModal from '@/pages/catalog/components/services/components/serviceDetailModal/hooks/useServiceDetailModal';
+import ServiceDetailModal from '@/pages/catalog/components/services/components/serviceDetailModal/ServiceDetailModal';
+import type { ServicesResponse } from '@/pages/catalog/components/types';
 import useGetServicesAndProducts from '@/pages/catalog/hooks/useGetServicesAndProducts';
 import styles from './styles.module.scss';
 

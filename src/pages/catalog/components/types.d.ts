@@ -61,6 +61,7 @@ export interface ProductType extends BaseEntity {
 	tags: Tag[];
 	brand: Brand;
 	appointment: null;
+	quantity?: number;
 }
 
 export interface ServiceType extends BaseEntity {

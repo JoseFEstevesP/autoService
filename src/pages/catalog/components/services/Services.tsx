@@ -1,3 +1,9 @@
+import CardServices from '@/components/common/Cards/cardServices/CardServices';
+import Loader from '@/components/ui/loader/Loader';
+import Pagination from '@/components/ui/pagination/Pagination';
+import { Order } from '@/data';
+import { transformEnum } from '@/helper/functions/transformEnum/transformEnum';
+import useGetServicesAndProducts from '@/pages/catalog/hooks/useGetServicesAndProducts';
 import { useCallback } from 'react';
 import type { FilterType } from '../filter/dto/FilterDto';
 import Filters from '../filter/Filters';
@@ -5,12 +11,6 @@ import type { ServicesResponse } from '../types';
 import useServiceDetailModal from './components/serviceDetailModal/hooks/useServiceDetailModal';
 import ServiceDetailModal from './components/serviceDetailModal/ServiceDetailModal';
 import styles from './styles.module.scss';
-import { Order } from '@/data';
-import useGetServicesAndProducts from '@/pages/catalog/hooks/useGetServicesAndProducts';
-import Loader from '@/components/ui/loader/Loader';
-import { transformEnum } from '@/helper/functions/transformEnum/transformEnum';
-import CardServices from '@/components/common/Cards/cardServices/CardServices';
-import Pagination from '@/components/ui/pagination/Pagination';
 
 const initialFilters: FilterType = {
 	search: '',

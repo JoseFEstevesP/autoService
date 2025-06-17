@@ -35,7 +35,11 @@ export type NameIcon =
 	| 'filter'
 	| 'checkBoxOn'
 	| 'checkBoxOff'
-	| 'arrowMin';
+	| 'arrowMin'
+	| 'cart'
+	| 'shopping'
+	| 'password'
+	| 'link';
 
 export interface IconParameter extends SVGProps<SVGSVGElement> {
 	iconName: NameIcon;

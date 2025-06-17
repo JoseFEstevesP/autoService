@@ -1,4 +1,10 @@
 .themeButton {
+	width: 2.5em;
+	height: 2.5em;
+	font-size: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	padding: 0;
 	transform-origin: center;

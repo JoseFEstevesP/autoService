@@ -2,12 +2,12 @@ import { ContextMsg } from '@/context/msg/MsgContext';
 import useGet from '@/hooks/useGet/useGet';
 import { router } from '@/services/api/router';
 import { useContext, useEffect, useState } from 'react';
-import type { FilterType } from '../components/servicesAndProducts/filter/dto/FilterDto';
+import type { FilterType } from '../components/filter/dto/FilterDto';
 import type {
 	GetName,
 	ProductsResponse,
 	ServicesResponse,
-} from '../components/servicesAndProducts/types';
+} from '../components/types';
 
 const useGetServicesAndProducts = <
 	T extends ServicesResponse | ProductsResponse,

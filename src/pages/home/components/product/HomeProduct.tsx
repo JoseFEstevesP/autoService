@@ -5,7 +5,7 @@ import useAddCart from '@/hooks/useAddCart/useAddCart';
 import type {
 	ProductsResponse,
 	ProductType,
-} from '@/pages/catalog/components/servicesAndProducts/types';
+} from '@/pages/catalog/components/types';
 import useGetServicesAndProducts from '@/pages/catalog/hooks/useGetServicesAndProducts';
 import styles from './styles.module.scss';
 

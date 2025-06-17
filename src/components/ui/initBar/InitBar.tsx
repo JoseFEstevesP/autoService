@@ -1,3 +1,5 @@
+import Cart from '@/components/common/Cart/Cart';
+import ButtonLogin from '../buttonLogin/ButtonLogin';
 import ButtonTheme from '../buttonTheme/ButtonTheme';
 import { Icons } from '../icon/Icons';
 import { MenuHorizontal } from '../menuHorizontal/MenuHorizontal';
@@ -15,7 +17,8 @@ const InitBar = ({ items, ...props }: InitBarProps) => {
 					<MenuHorizontal items={items} />
 				</main>
 				<footer className={styles.initBar__footer}>
-					<Icons iconName='user' className={styles.initBar__icon} />
+					<ButtonLogin />
+					<Cart />
 					<ButtonTheme />
 				</footer>
 			</aside>

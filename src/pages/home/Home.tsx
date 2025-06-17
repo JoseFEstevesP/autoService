@@ -5,6 +5,7 @@ import Price from './components/price/Price';
 import HomeProduct from './components/product/HomeProduct';
 import HomeServices from './components/services/HomeServices';
 import styles from './styles.module.scss';
+
 const Home = () => {
 	return (
 		<main className={styles.home}>
