@@ -1,7 +1,7 @@
 import Cart from '@/components/common/Cart/Cart';
-import ButtonLogin from '../buttonLogin/ButtonLogin';
 import ButtonTheme from '../buttonTheme/ButtonTheme';
 import { Icons } from '../icon/Icons';
+import LinkPer from '../link/LinkPer';
 import { MenuHorizontal } from '../menuHorizontal/MenuHorizontal';
 import styles from './styles.module.scss';
 import type { InitBarProps } from './types';
@@ -17,7 +17,8 @@ const InitBar = ({ items, ...props }: InitBarProps) => {
 					<MenuHorizontal items={items} />
 				</main>
 				<footer className={styles.initBar__footer}>
-					<ButtonLogin />
+					{/* <ButtonLogin /> */}
+					<LinkPer to='/login' icon={{ iconName: 'user' }} />
 					<Cart />
 					<ButtonTheme />
 				</footer>

@@ -81,7 +81,7 @@ const useGetServicesAndProducts = <
 		if (error) {
 			setMsg({
 				type: 'error',
-				msg: `Error al cargar los servicios`,
+				msg: `Error loading services`,
 			});
 		}
 	}, [error, setMsg]);
@@ -96,7 +96,7 @@ const useGetServicesAndProducts = <
 	}, [data, error, isLoading, setMsg]);
 
 	return {
-		data: data,
+		data,
 		error,
 		isLoading,
 		filters,

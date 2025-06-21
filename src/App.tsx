@@ -9,6 +9,7 @@ import Services from './pages/catalog/components/services/Services';
 import HomeServices from './pages/home/components/services/HomeServices';
 import Home from './pages/home/Home';
 import Quotes from './pages/quotes/Quotes';
+import ContentLogin from './pages/user/components/contentLogin/ContentLogin';
 
 export const App = () => {
 	return (
@@ -16,16 +17,32 @@ export const App = () => {
 			<Routes>
 				<Route
 					element={
-						<LayoutOfMenu title='Inicio'>
+						<LayoutOfMenu title='Home'>
 							<Home />
 						</LayoutOfMenu>
 					}
 					path='/'
 				/>
 				<Route
+					path='/login'
+					element={
+						<LayoutD title='Login'>
+							<ContentLogin />
+						</LayoutD>
+					}
+				/>
+				<Route
+					path='/register'
+					element={
+						<LayoutD title='Register'>
+							<ContentLogin />
+						</LayoutD>
+					}
+				/>
+				<Route
 					path='/services'
 					element={
-						<LayoutD title='Servicios'>
+						<LayoutD title='Services'>
 							<HomeServices />
 						</LayoutD>
 					}
@@ -33,7 +50,7 @@ export const App = () => {
 				<Route
 					path='/about'
 					element={
-						<LayoutOfMenu title='Acerca de'>
+						<LayoutOfMenu title='About de'>
 							<About />
 						</LayoutOfMenu>
 					}
@@ -41,7 +58,7 @@ export const App = () => {
 				<Route
 					path='/catalog'
 					element={
-						<LayoutD title='Catálogo'>
+						<LayoutD title='Catalog'>
 							<Catalog />
 						</LayoutD>
 					}
@@ -53,7 +70,7 @@ export const App = () => {
 				<Route
 					path='/quotes/:serviceId'
 					element={
-						<LayoutD title='Citas'>
+						<LayoutD title='Appointments'>
 							<Quotes />
 						</LayoutD>
 					}

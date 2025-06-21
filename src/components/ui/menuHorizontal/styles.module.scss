@@ -72,6 +72,7 @@
 			display 0.2s ease allow-discrete,
 			transform 0.5s ease,
 			opacity 0.5s ease;
+		z-index: 2;
 
 		&--active {
 			width: 18.75em;
@@ -96,6 +97,7 @@
 			opacity: 1;
 			pointer-events: auto;
 			transform: translateY(0);
+			z-index: initial;
 		}
 	}
 

@@ -18,10 +18,9 @@ export const Login = ({ to = '' }: LoginProperty) => {
 		register,
 		handleSubmit,
 		formState: { errors },
-		setError,
 	} = useForm<LoginDTOSchemaType>({ resolver: zodResolver(LoginDTOSchema) });
 
-	const { handleLogin, isLoading } = useLogin({ setError });
+	const { handleLogin, isLoading } = useLogin();
 
 	const { renderInput } = useRenderInputs<LoginDTOSchemaType>({
 		errors,
@@ -57,7 +56,7 @@ export const Login = ({ to = '' }: LoginProperty) => {
 			</form>
 			<div className={styles.login__linksContainer}>
 				<LinkPer
-					to='/registerUser'
+					to='/register'
 					className={styles.login__links}
 					text={msg.page.register}
 					icon={{
