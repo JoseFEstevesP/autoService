@@ -10,7 +10,7 @@ export const MenuHorizontal = ({ items, ...props }: HorizontalMenuProps) => {
 	return (
 		<div {...props} className={`${styles.menu}`}>
 			<Button
-				title='boton menu'
+				title='Button Menu'
 				className={styles.menu__btn}
 				onClick={() => setActive(!active)}
 			>

@@ -1,26 +1,26 @@
 export const menuData = [
 	{
-		text: 'Inicio',
+		text: 'Home',
 		to: '/',
 	},
 	{
-		text: 'Acerca de nosotros',
+		text: 'About Us',
 		to: '/about',
 	},
 	{
-		text: 'Catalogo',
+		text: 'Catalog',
 		to: '/catalog/services',
 	},
 	{
-		text: 'Citas',
+		text: 'Appointments',
 		to: '/quotes/1',
 	},
 	{
-		text: 'Pagos',
+		text: 'Payments',
 		to: '/#price',
 	},
 	{
-		text: 'Boletin',
+		text: 'Newsletter',
 		to: '#newsletter',
 	},
 ];

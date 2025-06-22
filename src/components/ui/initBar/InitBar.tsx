@@ -17,8 +17,11 @@ const InitBar = ({ items, ...props }: InitBarProps) => {
 					<MenuHorizontal items={items} />
 				</main>
 				<footer className={styles.initBar__footer}>
-					{/* <ButtonLogin /> */}
-					<LinkPer to='/login' icon={{ iconName: 'user' }} />
+					<LinkPer
+						to='/login'
+						className={styles.initBar__links}
+						icon={{ iconName: 'user', className: styles.initBar__icon }}
+					/>
 					<Cart />
 					<ButtonTheme />
 				</footer>

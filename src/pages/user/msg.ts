@@ -1,32 +1,30 @@
 export const msg = {
 	identifier: {
-		minLength: 'El nombre de usuario debe tener al menos 3 caracteres',
-		maxLength: 'El nombre de usuario no puede tener más de 20 caracteres',
-		invalid:
-			'El nombre de usuario solo puede contener letras, números y guiones bajos',
+		minLength: 'Username must be at least 3 characters long',
+		maxLength: 'Username cannot be longer than 20 characters',
+		invalid: 'Username can only contain letters, numbers, and underscores',
 		input: {
-			label: 'Ingrese su usuario',
-			placeHolder: 'Usuario',
+			label: 'Enter your username',
+			placeHolder: 'Username',
 			iconName: 'user',
 		},
 	},
 	password: {
-		minLength: 'La contraseña debe tener al menos 8 caracteres',
-		maxLength: 'La contraseña no puede tener más de 20 caracteres',
-		uppercase: 'La contraseña debe contener al menos una letra mayúscula',
-		lowercase: 'La contraseña debe contener al menos una letra minúscula',
-		number: 'La contraseña debe contener al menos un número',
-		symbol: 'La contraseña debe contener al menos un símbolo especial',
+		minLength: 'Password must be at least 8 characters long',
+		maxLength: 'Password cannot be longer than 20 characters',
+		uppercase: 'Password must contain at least one uppercase letter',
+		lowercase: 'Password must contain at least one lowercase letter',
+		number: 'Password must contain at least one number',
+		symbol: 'Password must contain at least one special symbol',
 		input: {
-			label: 'Contraseña',
-			placeHolder: 'Contraseña',
+			label: 'Password',
+			placeHolder: 'Password',
 			iconName: 'password',
 		},
 	},
-
 	page: {
-		btn: 'Iniciar sesión',
-		register: 'Registrarse',
-		forgotPassword: '¿Olvidaste tu contraseña?',
+		btn: 'Log in',
+		register: 'Sign up',
+		forgotPassword: 'Forgot your password?',
 	},
 };

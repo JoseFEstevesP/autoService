@@ -30,6 +30,13 @@
 		align-items: center;
 	}
 
+	&__links {
+		transition: color 0.5s ease;
+		&:hover {
+			color: var(--secondary-color);
+		}
+	}
+
 	&__icon {
 		--size: 1.5em;
 	}
