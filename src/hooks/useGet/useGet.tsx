@@ -1,8 +1,11 @@
+import { ContextToken } from '@/context/token/TokenContext';
 import { FETCH_AXIOS } from '@/services/api/axios';
 import type { ParamsDataGet } from '@/types/types';
 import { useQuery } from '@tanstack/react-query';
+import { useContext } from 'react';
 
 const useGet = <TResponse, TParams extends ParamsDataGet = ParamsDataGet>() => {
+	const { token } = useContext(ContextToken);
 	const getData = async ({
 		url,
 		params,
@@ -10,7 +13,14 @@ const useGet = <TResponse, TParams extends ParamsDataGet = ParamsDataGet>() => {
 		url: string;
 		params?: TParams;
 	}) => {
-		const res = await FETCH_AXIOS.get<TResponse>(url, { params });
+		const res = await FETCH_AXIOS.get<TResponse>(url, {
+			params,
+			...(token && {
+				headers: {
+					authorization: `Bearer ${token}`,
+				},
+			}),
+		});
 		return res.data;
 	};
 

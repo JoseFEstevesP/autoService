@@ -31,9 +31,12 @@
 	}
 
 	&__links {
-		transition: color 0.5s ease;
+		transition:
+			color 0.5s ease,
+			transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 		&:hover {
 			color: var(--secondary-color);
+			transform: scale(1.1);
 		}
 	}
 

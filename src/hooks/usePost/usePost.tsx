@@ -1,12 +1,15 @@
+import { ContextToken } from '@/context/token/TokenContext';
 import { FETCH_AXIOS } from '@/services/api/axios';
 import type { ParamsDataGet } from '@/types/types';
 import { useMutation, type UseMutationOptions } from '@tanstack/react-query';
+import { useContext } from 'react';
 
 const usePost = <
 	TResponse,
 	TPayload = unknown,
 	TParams extends ParamsDataGet = ParamsDataGet,
 >() => {
+	const { token } = useContext(ContextToken);
 	const postData = async ({
 		url,
 		payload,
@@ -16,7 +19,10 @@ const usePost = <
 		payload: TPayload;
 		params?: TParams;
 	}) => {
-		const res = await FETCH_AXIOS.post<TResponse>(url, payload, { params });
+		const res = await FETCH_AXIOS.post<TResponse>(url, payload, {
+			params,
+			...(token && { headers: { authorization: `Bearer ${token}` } }),
+		});
 		return res.data;
 	};
 

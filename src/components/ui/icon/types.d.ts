@@ -39,7 +39,8 @@ export type NameIcon =
 	| 'cart'
 	| 'shopping'
 	| 'password'
-	| 'link';
+	| 'link'
+	| 'logout';
 
 export interface IconParameter extends SVGProps<SVGSVGElement> {
 	iconName: NameIcon;

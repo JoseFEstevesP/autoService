@@ -17,8 +17,8 @@ const Footer = ({ ...props }: FooterProps) => {
 						}}
 					/>
 					<p className={styles.footer__description}>
-						Ofrecemos servicios automotrices de alta calidad y productos para
-						mantener tu vehículo en condiciones óptimas.
+						We offer high-quality automotive services and products to keep your
+						vehicle in optimal condition.
 					</p>
 					<div className={styles.footer__socialIcons}>
 						<LinkPer
@@ -40,45 +40,45 @@ const Footer = ({ ...props }: FooterProps) => {
 				</div>
 
 				<div className={styles.footer__section}>
-					<h2 className={styles.footer__sectionTitle}>Enlaces Rápidos</h2>
+					<h2 className={styles.footer__sectionTitle}>Quick Links</h2>
 					<ul className={styles.footer__linkList}>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer to='/' className={styles.footer__link}>
-								Inicio
+								Home
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer to='/about' className={styles.footer__link}>
-								Acerca de Nosotros
+								About Us
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer to='/services' className={styles.footer__link}>
-								Catálogo de Servicios
+								Service Catalog
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer to='/appointment' className={styles.footer__link}>
-								Reservar Cita
+								Book Appointment
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer to='/profile' className={styles.footer__link}>
-								Mi Perfil
+								My Profile
 							</LinkPer>
 						</li>
 					</ul>
 				</div>
 
 				<div className={styles.footer__section}>
-					<h2 className={styles.footer__sectionTitle}>Nuestros Servicios</h2>
+					<h2 className={styles.footer__sectionTitle}>Our Services</h2>
 					<ul className={styles.footer__linkList}>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer
 								to='/services/maintenance'
 								className={styles.footer__link}
 							>
-								Mantenimiento Preventivo
+								Preventive Maintenance
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
@@ -86,12 +86,12 @@ const Footer = ({ ...props }: FooterProps) => {
 								to='/services/oil-change'
 								className={styles.footer__link}
 							>
-								Cambio de Aceite
+								Oil Change
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer to='/services/brakes' className={styles.footer__link}>
-								Revisión de Frenos
+								Brake Inspection
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
@@ -99,24 +99,24 @@ const Footer = ({ ...props }: FooterProps) => {
 								to='/services/diagnostic'
 								className={styles.footer__link}
 							>
-								Diagnóstico Completo
+								Complete Diagnostic
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer to='/services/engine' className={styles.footer__link}>
-								Reparación de Motor
+								Engine Repair
 							</LinkPer>
 						</li>
 						<li className={styles.footer__linkListItem}>
 							<LinkPer to='/services/alignment' className={styles.footer__link}>
-								Alineación y Balanceo
+								Wheel Alignment & Balancing
 							</LinkPer>
 						</li>
 					</ul>
 				</div>
 
 				<div className={styles.footer__section}>
-					<h2 className={styles.footer__sectionTitle}>Contáctanos</h2>
+					<h2 className={styles.footer__sectionTitle}>Contact Us</h2>
 					<ul className={styles.footer__linkList}>
 						<li
 							className={`${styles.footer__linkListItem} ${styles['footer__linkListItem--contact']}`}
@@ -125,7 +125,7 @@ const Footer = ({ ...props }: FooterProps) => {
 								iconName='location'
 								className={styles.footer__contactIcon}
 							/>
-							Calle Falsa 123, Santiago, Chile
+							123 Fake Street, Santiago, Chile
 						</li>
 						<li
 							className={`${styles.footer__linkListItem} ${styles['footer__linkListItem--contact']}`}
@@ -143,7 +143,7 @@ const Footer = ({ ...props }: FooterProps) => {
 				</div>
 			</div>
 			<div className={styles.footer__copyright}>
-				<span>© 2025 AutoService. Todos los derechos reservados.</span>
+				<span>© 2025 AutoService. All rights reserved.</span>
 			</div>
 		</footer>
 	);
