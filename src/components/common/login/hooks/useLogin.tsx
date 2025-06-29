@@ -4,7 +4,7 @@ import usePost from '@/hooks/usePost/usePost';
 import { router } from '@/services/api/router';
 import { AxiosError } from 'axios';
 import { useContext } from 'react';
-import type { LoginDTOSchemaType } from '../dto/login.dto';
+import type { LoginDTOSchemaType } from '../dto/loginDto';
 import type { APIResponse } from './types';
 
 const useLogin = () => {
@@ -19,8 +19,7 @@ const useLogin = () => {
 		},
 		{
 			onSuccess: data => {
-				console.log(' data:', data);
-				setToken(data.token);
+				setToken(data.jwt);
 			},
 			onError: error => {
 				console.log(' error:', error);

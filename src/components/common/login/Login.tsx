@@ -8,12 +8,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Navigate } from 'react-router-dom';
-import { LoginDTOSchema, type LoginDTOSchemaType } from './dto/login.dto';
+import { LoginDTOSchema, type LoginDTOSchemaType } from './dto/loginDto';
 import useLogin from './hooks/useLogin';
 import styles from './styles.module.scss';
 import type { LoginProperty } from './types';
 
-export const Login = ({ to = '' }: LoginProperty) => {
+export const Login = ({ to = '/' }: LoginProperty) => {
 	const {
 		register,
 		handleSubmit,
@@ -36,13 +36,13 @@ export const Login = ({ to = '' }: LoginProperty) => {
 				{renderInput({
 					name: 'identifier',
 					label: msg.identifier.input.label,
-					placeholder: msg.identifier.input.placeHolder,
+					placeholder: msg.identifier.input.placeholder,
 					iconName: msg.identifier.input.iconName as NameIcon,
 				})}
 				{renderInput({
 					name: 'password',
 					label: msg.password.input.label,
-					placeholder: msg.password.input.placeHolder,
+					placeholder: msg.password.input.placeholder,
 					type: 'password',
 					iconName: msg.password.input.iconName as NameIcon,
 				})}
