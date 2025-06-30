@@ -4,5 +4,5 @@ export interface UseRegisterType<T> {
 	url: string;
 	name: string;
 	setError: UseFormSetError<T>;
-	to: string;
+	to?: string;
 }

@@ -30,7 +30,7 @@ const useRegister = <T extends FieldValues, APIResponse>({
 					type: 'default',
 					msg: 'Registration successful! Welcome!',
 				});
-				navigate(to);
+				if (to) navigate(to);
 			},
 			onError: error => {
 				if (error instanceof AxiosError) {

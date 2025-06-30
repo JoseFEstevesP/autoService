@@ -75,5 +75,7 @@ export const msg = {
 		btnRegister: 'Register',
 		register: 'Sign up',
 		forgotPassword: 'Forgot your password?',
+		btnRecovery: 'Recover your password',
+		btnSubmit: 'Submit',
 	},
 };

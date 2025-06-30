@@ -1,0 +1,8 @@
+@use '@styles/mixin' as *;
+
+.recovery {
+	width: 20em;
+	height: 100%;
+	padding: 1em;
+	@include defaultStyles();
+}

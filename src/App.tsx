@@ -10,6 +10,7 @@ import HomeServices from './pages/home/components/services/HomeServices';
 import Home from './pages/home/Home';
 import Quotes from './pages/quotes/Quotes';
 import ContentLogin from './pages/user/components/contentLogin/ContentLogin';
+import ContentRecovery from './pages/user/components/contentRecovery/ContentRecovery';
 import ContentRegister from './pages/user/components/contentRegister/ContentRegister';
 
 export const App = () => {
@@ -73,6 +74,14 @@ export const App = () => {
 					element={
 						<LayoutD title='Appointments'>
 							<Quotes />
+						</LayoutD>
+					}
+				/>
+				<Route
+					path='/recovery'
+					element={
+						<LayoutD title='Recovery'>
+							<ContentRecovery />
 						</LayoutD>
 					}
 				/>
