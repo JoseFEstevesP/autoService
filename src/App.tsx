@@ -6,8 +6,8 @@ import About from './pages/about/About';
 import Catalog from './pages/catalog/Catalog';
 import Products from './pages/catalog/components/products/Products';
 import Services from './pages/catalog/components/services/Services';
-import HomeServices from './pages/home/components/services/HomeServices';
 import Home from './pages/home/Home';
+import HomeServices from './pages/home/components/services/HomeServices';
 import Quotes from './pages/quotes/Quotes';
 import ContentLogin from './pages/user/components/contentLogin/ContentLogin';
 import ContentRecovery from './pages/user/components/contentRecovery/ContentRecovery';
@@ -18,18 +18,53 @@ export const App = () => {
 		<>
 			<Routes>
 				<Route
+					path='/'
 					element={
 						<LayoutOfMenu title='Home'>
 							<Home />
 						</LayoutOfMenu>
 					}
-					path='/'
 				/>
+				<Route
+					path='/about'
+					element={
+						<LayoutOfMenu title='About'>
+							<About />
+						</LayoutOfMenu>
+					}
+				/>
+				<Route
+					path='/catalog'
+					element={
+						<LayoutD title='Catalog'>
+							<Catalog />
+						</LayoutD>
+					}
+				>
+					<Route path='products' element={<Products />} />
+					<Route path='services' element={<Services />} />
+				</Route>
 				<Route
 					path='/login'
 					element={
 						<LayoutD title='Login'>
 							<ContentLogin />
+						</LayoutD>
+					}
+				/>
+				<Route
+					path='/quotes/:serviceId'
+					element={
+						<LayoutD title='Appointments'>
+							<Quotes />
+						</LayoutD>
+					}
+				/>
+				<Route
+					path='/recovery'
+					element={
+						<LayoutD title='Recovery'>
+							<ContentRecovery />
 						</LayoutD>
 					}
 				/>
@@ -46,42 +81,6 @@ export const App = () => {
 					element={
 						<LayoutD title='Services'>
 							<HomeServices />
-						</LayoutD>
-					}
-				/>
-				<Route
-					path='/about'
-					element={
-						<LayoutOfMenu title='About de'>
-							<About />
-						</LayoutOfMenu>
-					}
-				/>
-				<Route
-					path='/catalog'
-					element={
-						<LayoutD title='Catalog'>
-							<Catalog />
-						</LayoutD>
-					}
-				>
-					<Route path='services' element={<Services />} />
-					<Route path='products' element={<Products />} />
-				</Route>
-
-				<Route
-					path='/quotes/:serviceId'
-					element={
-						<LayoutD title='Appointments'>
-							<Quotes />
-						</LayoutD>
-					}
-				/>
-				<Route
-					path='/recovery'
-					element={
-						<LayoutD title='Recovery'>
-							<ContentRecovery />
 						</LayoutD>
 					}
 				/>
